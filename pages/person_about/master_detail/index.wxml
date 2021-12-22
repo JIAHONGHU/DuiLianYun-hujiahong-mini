@@ -1,0 +1,59 @@
+<view class="person_detail">
+  <!-- 个人信息 -->
+  <view class="background_image">
+    <image src="{{backgroundImage}}" mode="widthFix"></image>
+  </view>
+  <view class="portrait_and_infos">
+    <view class="portrait">
+      <image src="{{personalData.masterPhoto}}" mode="scaleToFill"></image>
+    </view>
+    <view class="portrait_right">
+      <view class="portrait_right_up">
+        <view class="name">{{personalData.masterName}}</view>
+        <view class="dynasty">{{personalData.masterDynasty}}</view>
+      </view>  
+      <view class="portrait_right_down">{{personalData.masterIntroduction}}</view>
+    </view>
+  </view>
+
+  <!-- 楹联列表 -->
+  <view class="total_wrap">
+    共{{masterCouplets}}条楹联
+  </view>
+  <view wx:if="{{coupletList.length === 0}}">
+    <van-empty description="空空如也~~~" />
+  </view>
+  <view wx:else class="couplet_wrap">
+    <view class="activity_wrap"
+      wx:for="{{coupletList}}"
+      wx:key="coupletId">
+      <navigator url="/pages/couplet_about/couplet_detail/index?coupletId={{item.coupletId}}" hover-class="none">
+        <view class="time_and_yunduo">
+          <view class="iconfont icon-duilianyun"></view>
+          <view class="active_time">{{item.coupletCreateTime}}</view>
+        </view>
+        <view class="content_wrap">
+          <view class="title">{{item.coupletTitle}}</view>
+          <view class="type">类型：{{item.coupletType}}</view>
+          <view class="line">
+            <view class="iconfont icon-tags"></view>
+            <view class="text">{{item.coupletFirstLine}}</view>
+          </view>
+          <view class="line">
+            <view class="iconfont icon-tags"></view>
+            <view class="text">{{item.coupletSecondLine}}</view>
+          </view>
+        </view>
+        <view class="data_wrap">
+          <view class="iconfont icon-liulan"><text>{{item.browses}}</text></view>
+          <view class="iconfont icon-dianzan"><text>{{item.coupletLikes}}</text></view>
+          <view class="iconfont icon-pinglun"><text>{{item.coupletComments}}</text></view>
+          <view class="iconfont icon-wodeshoucang"><text>{{item.coupletCollections}}</text></view>
+        </view>		
+      </navigator>
+    </view>
+  </view>
+</view>
+<!-- 插槽 -->
+<van-dialog id="van-dialog" />
+<van-toast id="van-toast" />

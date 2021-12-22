@@ -1,0 +1,102 @@
+<view class="minusView" style="border-bottom: 10rpx solid #f5f5f5;">
+  <!-- 正文 -->
+  <view class="bianjiao">
+    <view class="iconfont icon-zuoshangjiao"></view>
+    <view class="iconfont icon-youshangjiao"></view>
+  </view>
+  <view class="couplet_content">
+    <view class="title">{{coupletData.coupletTitle}}</view>
+    <view class="little_info">
+      <view class="author">作者：{{coupletData.coupletAuthorName}}</view>
+      <view class="type">类型：{{coupletData.coupletType}}</view>
+      <view>朝代：{{coupletData.coupletDynasty}}</view>
+    </view>
+    <view class="text">
+      <view class="line">{{coupletData.coupletFirstLine}}</view>
+      <view class="line">{{coupletData.coupletSecondLine}}</view>
+    </view>
+  </view>
+  <view class="bianjiao">
+    <view class="iconfont icon-zuoxiajiao"></view>
+    <view class="iconfont icon-youxiajiao"></view>
+  </view>
+</view>
+
+
+<!-- 注释等信息 -->
+<view class="other_content" style="margin-bottom: {{fixedBottomHeight}}px;">
+  <van-tabs active="{{ active }}" bind:change="onChange" animated swipeable color="#faae58">
+    <van-tab title="注释">
+      <scroll-view scroll-y style="height: {{scrollHeight}}px" scroll-top='0'>
+        <view wx:if="{{!coupletData.coupletExplanation}}">
+          <van-empty description="作者未填写注释" />
+        </view>
+        <view wx:else class="scroll_wrap"><text decode>{{coupletData.coupletExplanation}}</text></view>
+      </scroll-view>
+    </van-tab>
+    <van-tab title="赏析">
+      <scroll-view scroll-y style="height: {{scrollHeight}}px" scroll-top='0'>
+        <view wx:if="{{!coupletData.coupletAppreaciation}}">
+          <van-empty description="作者未填写赏析" />
+        </view>
+        <view wx:else class="scroll_wrap"><text decode>{{coupletData.coupletAppreaciation}}</text></view>
+      </scroll-view>
+    </van-tab>
+    <van-tab title="评论">
+      <scroll-view scroll-y style="height: {{scrollHeight}}px;" scroll-top='0' bindscrolltolower="reachBottom">
+        <view wx:if="{{coupletCommentList.length === 0}}">
+          <van-empty description="暂时还没有评论哦~~~" />
+        </view>
+        <view wx:else class="scroll_wrap">
+          <view class="comment_wrap"
+            wx:for="{{coupletCommentList}}"
+            wx:key="coupletCommentId">
+            <view class="up">
+              <view class="userPortrait"><image mode="scaleToFill" src="{{item.userPortrait}}"></image></view>
+              <view class="name_and_time">
+                <view class="userNickName">{{item.userNickName}}</view>
+                <view class="commentTime">{{item.coupletCommentTime}}</view>            
+              </view>
+            </view>
+            <view class="content"><text decode>{{item.coupletCommentContent}}</text></view>
+          </view>        
+        </view>
+      </scroll-view>
+    </van-tab>
+  </van-tabs>
+</view>
+
+<view class="minusView fixedBottom">
+  <!-- 底部作者 -->
+  <navigator class="more" url="{{coupletData.coupletDynasty === '当代' ? '/pages/person_about/user_detail/index?userId=' + coupletData.coupletAuthorId : '/pages/person_about/master_detail/index?masterId=' + coupletData.coupletAuthorId}}" hover-class="none">查看更多作者作品</navigator>
+
+  <!-- 底部操作 -->
+  <view class="action">
+    <view class="common">
+      <view  bindtap="doLike" class="{{isLike ? 'iconfont icon-yidianzan' : 'iconfont icon-dianzan'}}"></view>
+      <view class="num">{{coupletData.coupletLikes}}</view>
+    </view>
+    <view class="common">
+      <view bindtap="doCollection" class="{{isCollection ? 'iconfont icon-yishoucang' : 'iconfont icon-wodeshoucang'}}"></view>
+      <view class="num">{{coupletData.coupletCollections}}</view>
+    </view>
+    <view class="common">
+      <view bindtap="doComment" class="iconfont icon-pinglun"></view>
+      <view class="num">{{coupletData.coupletComments}}</view>
+    </view>
+  </view>
+</view>
+
+<!-- 评论弹出框 -->
+<van-popup show="{{ showComment }}" position="bottom" closeable
+  custom-style="height: 50%" bind:close="onClose">
+    <view class="comment_title">评论</view>
+    <van-field value="{{ commentInput }}" label="评论" required adjust-position
+    type="textarea" placeholder="请输入评论" autosize title-width="3em" size="large" bind:input="inputComment"/>
+    <van-button round type="danger" style="position:fixed; bottom: 20rpx; right: 220rpx;" bind:click="clearComment">清空输入</van-button>
+    <van-button round color="#faae58" style="position:fixed; bottom: 20rpx; right: 20rpx;" bind:click="submitComment">提交评论</van-button>
+</van-popup>
+
+<!-- 提示插槽 -->
+<van-notify id="van-notify" />
+<van-toast id="van-toast" />

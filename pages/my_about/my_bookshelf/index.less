@@ -1,0 +1,93 @@
+page{
+  background-color: #f8f8f8;
+}
+
+.title_wrap{
+  background-color: #ffffff;
+  padding: 10rpx 10rpx;
+  border-left: 10rpx solid #faae58;
+  font-size: 36rpx;
+  color: #353535;
+  margin: 10rpx 10rpx;
+}
+
+.documents_wrap{
+  .my_document{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10rpx 10rpx;
+    border: 1rpx solid #cccccc;
+    border-radius: 20rpx;
+    margin: 20rpx 10rpx;
+    background-color: #ffffff;
+    navigator{
+      flex: 5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .document_picture{
+        flex: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        image{
+          width: 135rpx;
+          height: 170rpx;
+          border-radius: 20rpx;
+        }
+      }
+      .name_and_introduction_and_score{
+        flex: 5;
+        padding-right: 10rpx;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: flex-start;
+        height: 170rpx;
+        .name{
+          flex: 1;
+          color: #faae58;
+          font-size: 36rpx;
+        }
+        .introduction{
+          flex: 2.4;
+          display: -webkit-box;
+          overflow: hidden;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+          color: #353535;
+          font-size: 28rpx;
+        }
+        .score{
+          flex: 1;
+          font-size: 30rpx;
+          color: #353535;
+        }
+      }      
+    }
+
+    .collections_and_delete{
+      flex: 1.5;
+      .common{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .iconfont{
+          height: 70rpx;
+          line-height: 70rpx;
+          text-align: center;
+          color: #353535;
+          padding-right: 5rpx;
+        }
+        .detail{
+          height: 70rpx;
+          line-height: 70rpx;
+          text-align: center;
+          font-size: 26rpx;
+          color: #353535;
+        }
+      }
+    }
+  }
+}

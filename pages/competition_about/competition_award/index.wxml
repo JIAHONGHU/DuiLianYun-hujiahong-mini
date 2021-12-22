@@ -1,0 +1,80 @@
+<view class="award_warp">
+  <view class="title">特等奖</view>
+  <view class="content">
+    <view wx:if="{{topList.length === 0}}">
+      <van-empty description="空空如也~~~" />
+    </view>
+    <view wx:else>
+      <view
+        wx:for="topList"
+        wx:key="awardId">
+        <view class="name_and_num">
+          <view class="name">获奖人:{{item.manuscriptUserName}}</view>
+          <view class="province">省份:{{item.manuscriptUserProvince}}</view>
+          <view class="number">编号:{{item.awardNumber}}</view>
+        </view>
+        <towxml nodes="{{item.awardContentMarkdown}}"/>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="award_warp">
+  <view class="title">一等奖</view>
+  <view class="content">
+    <view wx:if="{{firstList.length === 0}}">
+      <van-empty description="空空如也~~~" />
+    </view>
+    <view wx:else>
+      <view
+        wx:for="firstList"
+        wx:key="awardId">
+        <view class="name_and_num">
+          <view class="name">获奖人:{{item.manuscriptUserName}}</view>
+          <view class="province">省份:{{item.manuscriptUserProvince}}</view>
+          <view class="number">编号:{{item.awardNumber}}</view>
+        </view>
+        <towxml nodes="{{item.awardContentMarkdown}}"/>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="award_warp">
+  <view class="title">二等奖</view>
+  <view class="content">
+    <view wx:if="{{secondList.length === 0}}">
+      <van-empty description="空空如也~~~" />
+    </view>
+    <view wx:else>
+      <view
+        wx:for="secondList"
+        wx:key="awardId">
+        <view class="name_and_num">
+          <view class="name">获奖人:{{item.manuscriptUserName}}</view>
+          <view class="province">省份:{{item.manuscriptUserProvince}}</view>
+          <view class="number">编号:{{item.awardNumber}}</view>
+        </view>
+        <towxml nodes="{{item.awardContentMarkdown}}"/>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="award_warp">
+  <view class="title">三等奖</view>
+  <view class="content">
+    <view wx:if="{{thirdList.length === 0}}">
+      <van-empty description="空空如也~~~" />
+    </view>
+    <view wx:else>
+      <view
+        wx:for="thirdList"
+        wx:key="awardId">
+        <view class="name_and_num">
+          <view class="name">获奖人:{{item.manuscriptUserName}}</view>
+          <view class="province">省份:{{item.manuscriptUserProvince}}</view>
+          <view class="number">编号:{{item.awardNumber}}</view>
+        </view>
+        <towxml nodes="{{item.awardContentMarkdown}}"/>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,28 @@
+<!-- 搜索 -->
+<van-search value="{{ searchChoice.inputKey }}" placeholder="请输入搜索关键词" 
+  shape="round" background="#faae58" bind:cancel="cancelSearch" clearable="{{false}}"
+  bind:change="onChange" bind:search="onSearch" show-action
+></van-search>
+
+<!-- 筛选栏 -->
+<view class="drop_wrap">
+  <van-dropdown-menu class="item" active-color="#faae58">
+    <van-dropdown-item value="{{ searchChoice.coupletTypeId }}" options="{{ coupletType }}" bind:change="changeType"/>
+  </van-dropdown-menu>
+  <view class="mid"></view>
+  <van-dropdown-menu class="item" active-color="#faae58">
+    <van-dropdown-item value="{{ searchChoice.coupletDynasty }}" options="{{ coupletDynasty }}" bind:change="changeDynasty"/>
+  </van-dropdown-menu>
+  <view class="mid"></view>
+  <van-dropdown-menu class="item" active-color="#faae58">
+    <van-dropdown-item value="{{ searchChoice.coupletFrom }}" options="{{ coupletFrom }}" bind:change="changeFrom"/>
+  </van-dropdown-menu>
+</view>
+
+<!-- 楹联列表 -->
+<view wx:if="{{coupletList.length === 0}}">
+  <van-empty image="search" description="空空如也~~~" />
+</view>
+<view class="couplet_wrap">
+  <Couplet coupletList="{{coupletList}}"></Couplet>
+</view>

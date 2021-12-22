@@ -1,0 +1,65 @@
+<!-- 资料信息 -->
+<view class="top_page minusView">
+  <view class="document_title">
+    <image class="document_image" src="{{documentInfo.documentPicture}}"></image>
+    <view class="document_info">
+      <view class="document_name">{{documentInfo.documentName}}</view>
+      <view class="document_introduction">资料简介：{{documentInfo.documentIntroduction}}</view>
+    </view>
+  </view>
+  <view class="document_botton"> 
+    <van-button color="rgb(18, 124, 245)" custom-style="border-radius: 15%" bind:click="dealAddOrRemove">{{addOrRemove}}</van-button>
+    <van-button color="rgb(101, 202, 0)" custom-style="border-radius: 15%" bind:click="readDocument">阅读文件</van-button>
+  </view>
+  <view class="document_rate">综合评分({{documentInfo.documentScore}}):
+    <van-rate allow-half readonly void-color="#c7c7c7" size="50rpx" color="rgb(255,210,24)" value="{{documentInfo.documentScore}}"></van-rate>
+  </view>
+</view>
+
+<!-- 评论 -->
+<view class="bottom_page">
+  <view class="comment_title minusView">评论</view>
+  <view wx:if="{{isCommentEmpty}}">
+    <van-empty description="暂时还没有评论哦" />
+  </view>
+  <view wx:else>
+    <scroll-view scroll-y style="height: {{scrollHeight}}px" class="comment_box" bindscrolltolower="onScrollReachBottom" enhanced fast-deceleration="true"> 
+      <view wx:for="{{documentCommentList}}" wx:for-item="comment" wx:key="documentCommentUserPortrait">
+        <view class="comment_content_box" style="width: 100%;">
+          <view style="padding-top: 10rpx;">
+            <image src="{{comment.documentCommentUserPortrait}}" mode="scaleToFill" style="height: 80rpx; width: 80rpx; border-radius: 50rpx; float: left;"></image>
+            <view style="width: 250rpx; float: left;">
+              <view class="userNickName_box">{{comment.documentCommentUserNickName}}</view>
+              <view class="documentCommentTime_box">{{comment.documentCommentTime}}</view>
+            </view>
+            <view style="float: right; padding-right: 15rpx;">
+              <van-rate readonly void-color="#c7c7c7" size="40rpx" color="rgb(255,210,24)" value="{{comment.documentCommentStar}}"></van-rate>
+            </view>
+          </view>
+          <view style="padding: 10rpx 0; margin-left: 90rpx; border-bottom: 1rpx solid #dfdfdf; color: #353535;">
+            <text decode>{{comment.documentCommentContent}}</text>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  
+  <!-- 评论弹框 -->
+  <view class="post_comment">
+    <view class="post_comment_body minusView">
+      <image class="user_portrait" src="{{userPortrait}}" mode="scaleToFill"></image>
+      <view class="add_comment_pop" bindtap="showPopup">添加评论</view>
+      <van-popup round show="{{shouldShowPopup}}" position="bottom" custom-style="height: 80%;" bind:close="onClosePopup">
+        <view style="padding-left: 25rpx; padding-top: 25rpx; padding-bottom: 25rpx;">写评论</view>
+        <van-field bind:change="onCommentFieldChange" value="{{userCommentInput}}" show-word-limit maxlength="100" type="textarea" autosize="{maxHeight: 100, minHeight: 50}" placeholder="写下您的读后感" custom-style="background-color: rgb(243, 243, 243); width: 700rpx; height: 420rpx; border-radius: 30rpx; margin-left: 25rpx; font-size: 35rpx;" size="large" ></van-field>
+        <view style="color: rgb(18, 124, 245); padding-bottom: 30rpx; padding-top: 25rpx; padding-left: 25rpx;">来为它评个分吧！</view>
+        <van-rate bind:change="onCommentRateChange" value="{{userStarsInput}}" void-color="#c7c7c7" size="50rpx" color="rgb(255,210,24)" size="{{40}}" gutter="{{15}}" value="0"> 
+        </van-rate>
+        <van-button bind:click="addDocumentComment" round color="rgb(18, 124, 245)" custom-style="border-radius: 20rpx; width: 250rpx; display: block; line-height: 80rpx; font-size: 35rpx; position: fixed; bottom: 150rpx; left: 250rpx;">发表评论</van-button>
+      </van-popup>
+    </view>
+  </view>
+</view>
+
+<van-toast id="van-toast" />
+<van-notify id="van-notify"/>

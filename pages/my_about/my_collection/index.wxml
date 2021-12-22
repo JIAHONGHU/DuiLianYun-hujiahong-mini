@@ -1,0 +1,76 @@
+<!-- 标签栏（帖子、楹联） -->
+<van-tabs active="{{ active }}" bind:change="onChange" animated swipeable color="#faae58">
+  <van-tab title="帖子">
+    <!-- 提示内容条数 -->
+    <view class="total_wrap">
+      共{{userPostCollections}}条内容
+    </view>
+    <view wx:if="{{postList.length === 0}}">
+      <van-empty description="空空如也~~~" />
+    </view>
+    <view wx:else>
+      <!-- 收藏帖子列表 -->
+      <view class="collection_wrap"
+        wx:for="{{postList}}"
+        wx:key="postId">
+        <!-- 点击跳转到帖子详情 -->
+        <navigator url="/pages/post_about/post_detail/index?postId={{item.postId}}" hover-class="none">
+          <view class="title_wrap">{{item.postTitle}}</view>
+          <view class="author_wrap">{{item.postUserName}}</view>
+          <view class="line_wrap">
+            <view class="iconfont icon-tags"></view>
+            <view class="text_wrap">{{item.postFirstLine}}</view>
+          </view>
+          <view class="line_wrap">
+            <view class="iconfont icon-tags"></view>
+            <view class="text_wrap">{{item.postSecondLine}}</view>
+          </view>      
+        </navigator>
+        <!-- 收藏信息 -->
+        <view class="collection_and_delete">
+          <view class="collection">收藏时间：{{item.postCollectionTime}}</view>
+          <!-- 移出收藏 -->
+          <view class="delete" bindtap="deletePost" data-postid="{{item.postId}}" data-index="{{index}}"><text class="iconfont icon-shanchu"></text>移出收藏</view>
+        </view>
+      </view>    
+    </view>
+
+  </van-tab>
+  <van-tab title="楹联">
+    <view class="total_wrap">
+      共{{userCoupletCollections}}条内容
+    </view>
+    <view wx:if="{{coupletList.length === 0}}">
+      <van-empty description="空空如也~~~" />
+    </view>
+    <view wx:else>
+      <!-- 收藏楹联列表 -->
+      <view class="collection_wrap"
+        wx:for="{{coupletList}}"
+        wx:key="coupletId">
+        <!-- 点击跳转到楹联详情 -->
+        <navigator url="/pages/couplet_about/couplet_detail/index?coupletId={{item.coupletId}}" hover-class="none">
+          <view class="title_wrap">{{item.coupletTitle}}</view>
+          <view class="author_wrap">{{item.coupletAuthorName}}</view>
+          <view class="line_wrap">
+            <view class="iconfont icon-tags"></view>
+            <view class="text_wrap">{{item.coupletFirstLine}}</view>
+          </view>
+          <view class="line_wrap">
+            <view class="iconfont icon-tags"></view>
+            <view class="text_wrap">{{item.coupletSecondLine}}</view>
+          </view>      
+        </navigator>
+        <!-- 收藏信息 -->
+        <view class="collection_and_delete">
+          <view class="collection">收藏时间：{{item.coupletCollectionTime}}</view>
+          <!-- 移出收藏-->
+          <view class="delete" bindtap="deleteCouplet" data-coupletid="{{item.coupletId}}" data-index="{{index}}"><text class="iconfont icon-shanchu"></text>移出收藏</view>
+        </view>
+      </view>    
+    </view>
+  </van-tab>
+</van-tabs>
+
+<van-dialog id="van-dialog" />
+<van-toast id="van-toast" />

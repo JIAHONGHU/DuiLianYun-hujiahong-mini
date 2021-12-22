@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "NavBar": "../../components/NavBar/NavBar",
+    "van-icon": "@vant/weapp/icon/index",
+    "van-tag": "@vant/weapp/tag/index"
+  },
+  "navigationStyle": "custom",
+  "enablePullDownRefresh": false
+}

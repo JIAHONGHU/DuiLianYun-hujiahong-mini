@@ -1,0 +1,42 @@
+<!-- 大标题 -->
+<view class="view_title">
+  <text class="view_name">会员认证</text>
+</view>
+
+<!-- 表单 -->
+<van-cell-group>
+
+  <view class="common">
+    <van-field label="电话" size="large"  required adjust-position
+      value="{{formData.memberPhone}}" placeholder="请输入电话"
+      title-width="4em" bind:change="changeMemberPhone"
+      error-message="{{phoneIsRight? '' : '手机号格式错误'}}" maxlength='11'
+      bind:blur="losePhoneBlur"
+    />
+  </view>
+
+  <view class="common">
+    <van-field label="身份证号" size="large"  required adjust-position
+      value="{{formData.memberIdcard}}" placeholder="请输入身份证号"
+      title-width="4em" bind:change="changeMemberIdcard"
+      error-message="{{idcardIsRight? '' : '身份证号格式错误'}}" maxlength='18'
+      bind:blur="loseIdcardBlur"
+    />
+  </view>
+
+  <view class="common">
+    <van-field label="会员证" size="large"  required placeholder="请上传会员证照片"
+      title-width="3em" readonly="{{true}}"
+    />
+    <van-uploader file-list="{{ fileList }}" bind:after-read="uploadImg" max-count="1" bind:delete="deleteImg" upload-text="上传会员证" deletable="{{ true }}" />
+  </view>
+
+  <view class="submit_wrap">
+    <van-button round color="#faae58" form-type="submit" bind:click="submit">提交审核</van-button>
+    <van-button round type="danger" form-type="reset" bind:click="reset">重置内容</van-button>
+  </view>
+
+  <!-- notify的插槽 -->
+  <van-notify id="van-notify"/>
+
+</van-cell-group>

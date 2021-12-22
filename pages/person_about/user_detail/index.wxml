@@ -1,0 +1,116 @@
+<view class="person_detail">
+  <view class="background_image">
+    <image src="{{backgroundImage}}" mode="widthFix"></image>
+  </view>
+  <view class="portrait_and_infos">
+    <view class="portrait">
+      <image src="{{personalData.userPortrait}}" mode="scaleToFill"></image>
+    </view>
+    <view class="portrait_right">
+      <view class="portrait_right_up">
+        <view class="common_wrap">
+          <view class="common_num">{{personalData.userFans}}</view>
+          <view class="common_text">粉丝</view>
+        </view>
+        <view class="common_wrap">
+          <view class="common_num">{{personalData.userAttentions}}</view>
+          <view class="common_text">关注</view>
+        </view>
+        <view class="common_wrap">
+          <view class="common_num">{{personalData.userLikes}}</view>
+          <view class="common_text">获赞</view>
+        </view>
+      </view>  
+      <view class="portrait_right_down" bindtap="doAttention">
+        <view wx:if="{{personalData.isAttention}}" class="yiguanzhu">已关注</view>
+        <view wx:else class="guanzhu">+ 关注</view>
+      </view>
+    </view>
+  </view>
+  <view class="name_and_motto">
+    <view class="name">{{personalData.userNickname}}</view>
+    <view class="motto">{{personalData.userMotto}}</view>
+  </view>
+
+<van-tabs active="{{ active }}" bind:change="onChange" animated swipeable color="#faae58">
+  <van-tab title="帖子">
+    <view class="total_wrap">
+      共{{userPosts}}条内容
+    </view>
+    <view wx:if="{{postList.length === 0}}">
+      <van-empty description="空空如也~~~" />
+    </view>
+    <view wx:else class="post_wrap">
+      <view class="activity_wrap"
+        wx:for="{{postList}}"
+        wx:key="postId">
+        <navigator url="/pages/post_about/post_detail/index?postId={{item.postId}}" hover-class="none">
+          <view class="time_and_yunduo">
+            <view class="iconfont icon-duilianyun"></view>
+            <view class="active_time">{{item.postCreateTime}}</view>
+          </view>
+          <view class="content_wrap">
+            <view class="title">{{item.postTitle}}</view>
+            <view class="type">类型：{{item.postType}}</view>
+            <view class="line">
+              <view class="iconfont icon-tags"></view>
+              <view class="text">{{item.postFirstLine}}</view>
+            </view>
+            <view class="line">
+              <view class="iconfont icon-tags"></view>
+              <view class="text">{{item.postSecondLine}}</view>
+            </view>
+          </view>
+        </navigator>
+        <view class="data_wrap">
+          <view class="iconfont icon-liulan"><text>{{item.browses}}</text></view>
+          <view class="iconfont icon-dianzan"><text>{{item.postLikes}}</text></view>
+          <view class="iconfont icon-pinglun"><text>{{item.postComments}}</text></view>
+          <view class="iconfont icon-wodeshoucang"><text>{{item.postCollections}}</text></view>
+        </view>	
+      </view>
+    </view>
+  </van-tab>
+  <van-tab title="楹联">
+    <view class="total_wrap">
+      共{{userCouplets}}条内容
+    </view>
+    <view wx:if="{{coupletList.length === 0}}">
+      <van-empty description="空空如也~~~" />
+    </view>
+    <view wx:else class="couplet_wrap">
+      <view class="activity_wrap"
+        wx:for="{{coupletList}}"
+        wx:key="coupletId">
+        <navigator url="/pages/couplet_about/couplet_detail/index?coupletId={{item.coupletId}}" hover-class="none">
+          <view class="time_and_yunduo">
+            <view class="iconfont icon-duilianyun"></view>
+            <view class="active_time">{{item.coupletCreateTime}}</view>
+          </view>
+          <view class="content_wrap">
+            <view class="title">{{item.coupletTitle}}</view>
+            <view class="type">类型：{{item.coupletType}}</view>
+            <view class="line">
+              <view class="iconfont icon-tags"></view>
+              <view class="text">{{item.coupletFirstLine}}</view>
+            </view>
+            <view class="line">
+              <view class="iconfont icon-tags"></view>
+              <view class="text">{{item.coupletSecondLine}}</view>
+            </view>
+          </view>
+          <view class="data_wrap">
+            <view class="iconfont icon-liulan"><text>{{item.browses}}</text></view>
+            <view class="iconfont icon-dianzan"><text>{{item.coupletLikes}}</text></view>
+            <view class="iconfont icon-pinglun"><text>{{item.coupletComments}}</text></view>
+            <view class="iconfont icon-wodeshoucang"><text>{{item.coupletCollections}}</text></view>
+          </view>		
+        </navigator>
+      </view>
+    </view>
+  </van-tab>
+</van-tabs>
+</view>
+
+<van-dialog id="van-dialog" />
+<van-toast id="van-toast" />

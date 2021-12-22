@@ -1,0 +1,70 @@
+
+.top_page{
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.849);
+  flex-direction: column;
+  padding-top: 15rpx;
+  
+}
+
+.member_card{
+  width:700rpx;
+  height: 400rpx;
+  border-radius: 20rpx;
+  background-color: #fb857e;
+  background-image: linear-gradient(116deg, #fb857e 0%, #f7e368 100%);
+  
+}
+
+.emblem{
+  width:170rpx;
+  height: 170rpx;
+  margin: 15rpx 15rpx;
+  border-radius: 170rpx;
+  float: left;
+}
+.title{
+  width: 300rpx;
+  color: white;
+  margin-top: 30rpx;
+  margin-left: 10rpx;
+  float: left;
+}
+.content{
+  font-size: 42rpx;
+}
+.member_id{
+  color:white;
+  width: 600rpx;
+  font-size: 40rpx;
+  margin-top: 120rpx;
+  margin-left: 40rpx;
+  float: left;
+}
+.count_days{
+  margin-top: 80rpx;
+  margin-bottom: 10rpx;
+  color:orange;
+  font-size: 50rpx;
+  border: rgb(255, 123, 0) solid 2rpx;
+  border-radius: 30rpx;
+}
+.days_display{
+  width:700rpx;
+  height:150rpx;
+  margin-top: 10rpx;
+  
+}
+.iconfont{
+  width:100rpx;
+  height: 100rpx;
+  margin: 10rpx;
+  float: left; 
+  font-size: 100rpx;
+}
+.bottom_page{
+  width: 750rpx;
+  background-color: rgba(255, 255, 255, 0.849);
+  margin: 20rpx 0;
+}

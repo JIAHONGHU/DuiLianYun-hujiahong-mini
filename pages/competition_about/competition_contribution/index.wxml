@@ -1,0 +1,67 @@
+<!-- 大标题 -->
+<view class="view_title">
+  <text class="view_name">比赛投稿</text>
+</view>
+
+<!-- 表单 -->
+<van-cell-group>
+  <view class="common">
+    <van-field label="姓名" size="large"  required adjust-position
+      value="{{formData.manuscriptUserName}}" placeholder="请输入姓名"
+      title-width="4em" bind:change="changeManuscriptUserName"
+    />  
+  </view>
+
+  <view class="common">
+    <van-field label="电话" size="large"  required adjust-position
+      value="{{formData.manuscriptUserPhone}}" placeholder="请输入电话"
+      title-width="4em" bind:change="changeManuscriptUserPhone"
+      error-message="{{phoneIsRight? '' : '手机号格式错误'}}" maxlength='11'
+      bind:blur="losePhoneBlur"
+    />
+  </view>
+
+  <view class="province_wrap common">
+    <view class="xing">*</view><view class="province">省份</view>
+    <van-dropdown-menu class="province_van">
+      <van-dropdown-item value="{{ initValue }}" options="{{ totalProvinces }}" bind:change="changeManuscriptUserProvince" />
+    </van-dropdown-menu>  
+  </view>
+
+  <view class="common">
+    <van-field label="详细地址" size="large" required adjust-position autosize type="textarea"
+      value="{{formData.manuscriptUserAddress}}" placeholder="请输入详细地址"
+      title-width="4em" bind:change="changeManuscriptUserAddress" 
+    />
+  </view>
+
+  <view class="common">
+    <van-field label="邮箱" size="large"  required adjust-position
+      value="{{formData.manuscriptUserEmail}}" placeholder="请输入邮箱"
+      title-width="4em" bind:change="changeManuscriptUserEmail"
+      bind:blur="loseEmailBlur" error-message="{{emailIsRight? '' : '邮箱格式错误'}}"
+    />
+  </view>
+
+  <view class="common">
+    <van-field label="作品" size="large" required border="{{false}}" readonly="{{true}}"
+      title-width="2em" placeholder="将所有作品一并填入，注意排版"
+    />    
+    <textarea  class="content-input" adjust-position value="{{formData.manuscriptContent}}" placeholder="请输入您的作品" bindinput="changeManuscriptContent" maxlength="-1"></textarea>    
+  </view>
+
+  <!-- <view class="common image_wrap">
+    <van-uploader file-list="{{ fileList }}" bind:after-read="uploadImg" max-count="1" bind:delete="deleteImg" upload-text="支持图片噢" deletable="{{ true }}" />
+  </view>
+
+  <view class="tip"><text decode>当前只支持上传一张图片哟，如有需要请自行拼图\n系统正在维护升级，造成的不便敬请谅解。</text></view> -->
+
+  <view class="submit_wrap">
+    <van-button round color="#faae58" form-type="submit" bind:click="submit">提交审核</van-button>
+    <van-button round type="danger" form-type="reset" bind:click="reset">重置内容</van-button>
+  </view>
+
+  <!-- notify的插槽 -->
+  <van-notify id="van-notify"/>
+
+</van-cell-group>

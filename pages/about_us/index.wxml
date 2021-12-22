@@ -1,0 +1,24 @@
+<view class="main_page">
+  <view class="top_page">
+    <view class="emblem">
+     <image src="{{emblemSrc}}"></image>
+    </view>
+    <view class="title">湖南省楹联家协会</view>
+  </view>
+  <view class="body_page" >
+    <van-collapse value="{{ activeNames }}" bind:change="onChange">
+      <van-collapse-item  title="协会基本信息" name="1">
+        <text>{{associationInfo.basicInfo}}</text>
+      </van-collapse-item>
+      <van-collapse-item title="协会领导机构" name="2">
+       <text>{{associationInfo.leadershipInfo}}</text>
+      </van-collapse-item>
+      <van-collapse-item title="协会简介" name="3" >
+        <text>{{associationInfo.briefInfo}}</text>
+      </van-collapse-item>
+      <van-collapse-item title="如何加入我们" name="4" >
+        <text>{{associationInfo.howToAddUs}}</text>
+      </van-collapse-item>
+    </van-collapse>
+  </view>
+</view>

@@ -1,0 +1,130 @@
+page {
+  background-color: #f7f7f7;
+}
+.total_wrap {
+  background-color: #ffffff;
+  padding: 10rpx 10rpx;
+  border-left: 10rpx solid #faae58;
+  font-size: 36rpx;
+  color: #353535;
+  margin: 10rpx 10rpx;
+}
+.collection_wrap {
+  background-color: #ffffff;
+  margin: 10rpx 10rpx;
+  margin-bottom: 20rpx;
+  padding: 10rpx 10rpx;
+}
+.collection_wrap navigator .title_wrap {
+  font-size: 34rpx;
+  text-align: center;
+  color: #353535;
+  padding: 10rpx 0;
+}
+.collection_wrap navigator .author_wrap {
+  font-size: 28rpx;
+  text-align: center;
+  color: #9e9ee9;
+  padding-bottom: 10rpx;
+}
+.collection_wrap navigator .line_wrap {
+  display: flex;
+  justify-content: center;
+  color: #353535;
+  padding-bottom: 10rpx;
+  font-size: 32rpx;
+}
+.collection_wrap navigator .line_wrap .icon-tags {
+  color: #faae58;
+}
+.collection_wrap navigator .line_wrap .text_wrap {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+.collection_wrap .collection_and_delete {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #353535;
+  font-size: 30rpx;
+  padding: 10rpx 0;
+}
+.my_document {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10rpx 10rpx;
+  border: 1rpx solid #cccccc;
+  border-radius: 20rpx;
+  margin: 20rpx 10rpx;
+  background-color: #ffffff;
+}
+.my_document navigator {
+  flex: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.my_document navigator .document_picture {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.my_document navigator .document_picture image {
+  width: 135rpx;
+  height: 170rpx;
+  border-radius: 20rpx;
+}
+.my_document navigator .name_and_introduction_and_browse {
+  flex: 5;
+  padding-right: 10rpx;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 170rpx;
+}
+.my_document navigator .name_and_introduction_and_browse .name {
+  flex: 1;
+  color: #faae58;
+  font-size: 36rpx;
+}
+.my_document navigator .name_and_introduction_and_browse .introduction {
+  flex: 2.6;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  color: #353535;
+  font-size: 28rpx;
+}
+.my_document navigator .name_and_introduction_and_browse .browse {
+  flex: 1;
+  font-size: 28rpx;
+  color: #353535;
+}
+.my_document .collections_and_delete {
+  flex: 1.5;
+}
+.my_document .collections_and_delete .common {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.my_document .collections_and_delete .common .iconfont {
+  height: 70rpx;
+  text-align: center;
+  line-height: 70rpx;
+  color: #353535;
+  padding-right: 5rpx;
+}
+.my_document .collections_and_delete .common .detail {
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: center;
+  font-size: 26rpx;
+  color: #353535;
+}

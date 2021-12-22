@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "van-search": "@vant/weapp/search/index",
+    "van-dropdown-menu": "@vant/weapp/dropdown-menu/index",
+    "van-dropdown-item": "@vant/weapp/dropdown-item/index",
+    "Couplet": "../../../components/Couplet/Couplet",
+    "van-empty": "@vant/weapp/empty/index"
+  },
+  "navigationBarTitleText": "中华对联库"
+}

@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "van-toast": "@vant/weapp/toast/index",
+    "van-action-sheet": "@vant/weapp/action-sheet/index",
+    "van-empty": "@vant/weapp/empty/index"
+  },
+  "navigationBarTitleText": "我的书架"
+}

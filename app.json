@@ -1,0 +1,81 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/activity/index",
+    "pages/creation/index",
+    "pages/study/index",
+    "pages/my/index",
+    "pages/about_us/index",
+    "pages/couplet_about/couplet_detail/index",
+    "pages/couplet_about/couplet_list/index",
+    "pages/post_about/post_detail/index",
+    "pages/post_about/post_modify/index",
+    "pages/person_about/user_detail/index",
+    "pages/person_about/master_detail/index",
+    "pages/person_about/master_list/index",
+    "pages/news_about/news_list/index",
+    "pages/news_about/news_detail/index",
+    "pages/competition_about/competition_list/index",
+    "pages/competition_about/competition_contribution/index",
+    "pages/competition_about/competition_award/index",
+    "pages/study_about/document_detail/index",
+    "pages/my_about/my_information/index",
+    "pages/my_about/my_post/index",
+    "pages/my_about/my_couplet/index",
+    "pages/my_about/my_bookshelf/index",
+    "pages/my_about/my_collection/index",
+    "pages/my_about/my_attention/index",
+    "pages/my_about/my_fan/index",
+    "pages/my_about/my_browse/index",
+    "pages/my_about/my_notice/index",
+    "pages/my_about/my_member/index",
+    "pages/my_about/apply_member/index",
+    "pages/my_about/certificate_member/index",
+    "pages/my_about/modify_information/index",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle":"black",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color": "#7b7b7b",
+    "selectedColor": "#000000",
+    "backgroundColor": "#fafafa",
+    "position": "bottom",
+    "borderStyle": "black",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath": "icons/home.png",
+      "selectedIconPath": "icons/home_s.png"
+    },
+    {
+      "pagePath": "pages/activity/index",
+      "text": "动态",
+      "iconPath": "icons/dongtai.png",
+      "selectedIconPath": "icons/dongtai_s.png"  
+    },
+    {
+      "pagePath": "pages/creation/index",
+      "text": "创作",
+      "iconPath": "icons/chuangzuo.png",
+      "selectedIconPath": "icons/chuangzuo_s.png"
+    },
+    {
+      "pagePath": "pages/study/index",
+      "text": "学习",
+      "iconPath": "icons/xuexi.png",
+      "selectedIconPath": "icons/xuexi_s.png"
+    },
+    {
+      "pagePath": "pages/my/index",
+      "text": "我的",
+      "iconPath": "icons/wode.png",
+      "selectedIconPath": "icons/wode_s.png"
+    }]
+  },
+  "sitemapLocation": "sitemap.json"
+}

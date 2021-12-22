@@ -1,0 +1,107 @@
+page {
+  background-color: #ebebeb;
+}
+.attention_wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20rpx 0;
+  margin: 10rpx 10rpx;
+  background-color: #ffffff;
+  border: 1rpx solid #cccccc;
+  border-radius: 20rpx;
+}
+.attention_wrap navigator {
+  flex: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.attention_wrap navigator .portrait {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.attention_wrap navigator .portrait image {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+.attention_wrap navigator .name_and_introduction {
+  flex: 3;
+  height: 100rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.attention_wrap navigator .name_and_introduction .name {
+  color: #faae58;
+  font-size: 34rpx;
+}
+.attention_wrap navigator .name_and_introduction .introduction {
+  color: #353535;
+  font-size: 28rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+.attention_wrap .attention {
+  flex: 1;
+  position: relative;
+  text-align: center;
+  padding-right: 10rpx;
+}
+.attention_wrap .attention .iconfont {
+  font-size: 70rpx;
+  color: #faae58;
+}
+.ancient_wrap {
+  padding: 20rpx 0;
+  margin: 10rpx 10rpx;
+  background-color: #ffffff;
+  border: 1rpx solid #cccccc;
+  border-radius: 20rpx;
+}
+.ancient_wrap navigator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ancient_wrap navigator .portrait {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 170rpx;
+}
+.ancient_wrap navigator .portrait image {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+.ancient_wrap navigator .portrait .iconfont {
+  color: #faae58;
+  font-size: 40rpx;
+}
+.ancient_wrap navigator .name_and_introduction {
+  flex: 4;
+  display: flex;
+  height: 170rpx;
+  flex-direction: column;
+  padding-right: 20rpx;
+}
+.ancient_wrap navigator .name_and_introduction .name {
+  color: #faae58;
+  font-size: 34rpx;
+}
+.ancient_wrap navigator .name_and_introduction .introduction {
+  color: #353535;
+  font-size: 28rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}

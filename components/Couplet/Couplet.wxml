@@ -1,0 +1,27 @@
+<view
+wx:for="{{coupletList}}"
+wx:key="coupletId">
+	<navigator url="/pages/couplet_about/couplet_detail/index?coupletId={{item.coupletId}}" hover-class="none">
+		<view class="couplet_title">{{item.coupletTitle}}</view>
+		<view class="couplet_info_wrap">
+			<view class="info_common"><view class="tip">作者:</view><view class="info_text_line">{{item.coupletAuthorName}}</view></view>
+			<view class="info_common"><view class="tip">朝代:</view><view class="info_text_line">{{item.coupletDynasty}}</view></view>
+			<view class="info_common"><view class="tip">分类:</view><view class="info_text">{{item.coupletType}}</view></view>
+			<view class="info_common"><view class="tip">出处:</view><view class="info_text">{{item.coupletFrom}}</view></view>
+		</view>
+		<view class="couplet_text_wrap">
+			<view class="couplet_line">
+				<view class="iconfont icon-tags"></view>
+				<view class="couplet_text">{{item.coupletFirstLine}}</view>
+			</view>
+			<view class="couplet_line">
+				<view class="iconfont icon-tags"></view>
+				<view class="couplet_text">{{item.coupletSecondLine}}</view>
+			</view>
+			<view wx:if="{{item.coupletCreaeTime}}" class="couplet_action_and_time">
+				<view class="couplet_action">点赞 ~ 评论 ~ 收藏</view>
+				<view class="couplet_time">{{item.coupletCreateTime}}</view>
+			</view>
+		</view>   
+	</navigator>
+</view>

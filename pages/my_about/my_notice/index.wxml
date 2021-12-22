@@ -1,0 +1,17 @@
+<!-- 通知列表 点击通知跳转详细信息-->
+<navigator class="notice_wrap"
+  hover-class="none"
+  wx:for="{{noticeList}}"
+  wx:key="noticeId">
+  <view class="title_read_time">
+    <view class="title_wrap">{{item.noticeTitle}}
+      <van-icon name="hot-o" color="red" class="iconfont_hot" wx:if="{{item.noticeIdRead == 0}}"/>
+    </view>
+    <view class="time_wrap">{{item.noticeTime}}
+    </view>
+  </view>
+  <view class="content_deal">
+    <view class="content_wrap">{{item.noticeContent}}</view>
+  </view>
+
+</navigator>

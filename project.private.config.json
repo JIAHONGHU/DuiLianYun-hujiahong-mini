@@ -1,0 +1,216 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "动态",
+          "pathName": "pages/activity/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "首页",
+          "pathName": "pages/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "创作",
+          "pathName": "pages/creation/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "我的",
+          "pathName": "pages/my/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "联届视窗",
+          "pathName": "pages/news_about/news_list/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "新闻详情",
+          "pathName": "pages/news_about/news_detail/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "中华对联库",
+          "pathName": "pages/couplet_about/couplet_list/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "中国楹联家",
+          "pathName": "pages/person_about/master_list/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "学习",
+          "pathName": "pages/study/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "我的帖子",
+          "pathName": "pages/my_about/my_post/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "我的楹联",
+          "pathName": "pages/my_about/my_couplet/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "我的粉丝",
+          "pathName": "pages/my_about/my_fan/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "我的关注",
+          "pathName": "pages/my_about/my_attention/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "我的书架",
+          "pathName": "pages/my_about/my_bookshelf/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "我的收藏",
+          "pathName": "pages/my_about/my_collection/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "最近浏览",
+          "pathName": "pages/my_about/my_browse/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "我的通知",
+          "pathName": "pages/my_about/my_notice/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "申请会员",
+          "pathName": "pages/my_about/apply_member/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "关于我们",
+          "pathName": "pages/about_us/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "我的信息",
+          "pathName": "pages/my_about/my_information/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "修改个人资料",
+          "pathName": "pages/my_about/modify_information/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "用户详情页",
+          "pathName": "pages/person_about/user_detail/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "古人主页",
+          "pathName": "pages/person_about/master_detail/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "修改帖子",
+          "pathName": "pages/post_about/post_modify/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "帖子详情",
+          "pathName": "pages/post_about/post_detail/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "楹联详情",
+          "pathName": "pages/couplet_about/couplet_detail/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "比赛投稿",
+          "pathName": "pages/competition_about/competition_contribution/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "我的会员",
+          "pathName": "pages/my_about/my_member/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "资料详情",
+          "pathName": "pages/study_about/document_detail/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "金鸽诗歌奖",
+          "pathName": "pages/competition_about/competition_list/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "日志",
+          "pathName": "pages/logs/logs",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "认证会员",
+          "pathName": "pages/my_about/certificate_member/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "比赛获奖信息",
+          "pathName": "pages/competition_about/competition_award/index",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

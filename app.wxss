@@ -1,0 +1,6 @@
+@import "./styles/iconfont.wxss";
+
+/* 解决margin-bottom ios失效 */
+page{
+  padding-bottom: 1rpx; 
+}

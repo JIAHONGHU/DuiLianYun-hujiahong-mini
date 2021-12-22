@@ -1,0 +1,15 @@
+<navigator class="news_wrap"
+  wx:for="{{newsList}}"
+  wx:key="newsId"
+  url="/pages/news_about/news_detail/index?newsId={{item.newsId}}"
+  hover-class="none"
+  >
+  <view class="news_title">{{item.newsTitle}}</view>
+  <view class="news_image" wx:if="{{item.newsImage}}">
+    <image mode="widthFix" src="{{item.newsImage}}"></image>
+  </view>
+  <view class="editor_and_time">
+    <view class="news_editor">责任编辑：{{item.newsEditor}}</view>
+    <view class="news_time">{{item.newsTime}}</view>  
+  </view>
+</navigator>

@@ -1,0 +1,75 @@
+<!-- 首页 -->
+<!-- 自定义导航栏 -->
+<NavBar></NavBar>
+
+<!-- 联届视窗 -->
+<view class="news_wrap">
+  <!-- swiper 和 image 都存在默认的样式 设置相对rpx-->
+  <swiper autoplay indicator-dots circular indicator-active-color="#FFDEAD" class="index_swiper">
+    <swiper-item 
+    wx:for="{{swiperList}}" 
+    wx:key="newsId">
+      <navigator url="/pages/news_about/news_detail/index?newsId={{item.newsId}}" hover-class="none">
+        <image mode="widthFix" src="{{item.newsImage}}"></image>
+        <view class="news_info">
+          {{item.newsTitle}}
+        </view>
+      </navigator>
+    </swiper-item>
+  </swiper>
+</view>
+
+<!-- 五个选项卡 -->
+<view class="nav_selection_wrap">
+  <view class="nav_selection_item"
+  wx:for="{{selectionList}}"
+  wx:key="sel_id">
+    <navigator url="{{item.sel_url}}">
+      <image mode="widthFix" src="{{item.sel_src}}"></image>
+    </navigator>  
+  </view>
+</view>
+
+
+<!-- 中华楹联库 -->
+<view class="couplet_wrap">
+  <navigator class="couplet_banner" url="/pages/couplet_about/couplet_list/index" hover-class="none">
+    <image mode="widthFix" src="../../icons/zhonghuaduiliankuhengfu.png"></image>
+  </navigator>
+  <Couplet coupletList="{{coupletList}}"></Couplet>
+</view>
+
+<!-- 中国楹联家 -->
+<view class="master_wrap">
+  <navigator class="master_banner" url="/pages/person_about/master_list/index" hover-class="none">
+    <image mode="widthFix" src="../../icons/zhongguoyinglianjiahengfu.png"></image>
+  </navigator>
+  <navigator
+  class="master_content"
+  wx:for="{{masterList}}"
+  wx:key="masterId"
+  url="{{item.masterDynasty === '当代' ? '/pages/person_about/user_detail/index?userId=' + item.masterId : '/pages/person_about/master_detail/index?masterId=' + item.masterId}}" hover-class="none">
+    <view class="master_head_portrait">
+      <image mode="scaleToFill" src="{{item.masterPhoto}}"></image>
+    </view>
+    <view class="master_brief"><text class="name">{{item.masterName}}</text><text decode>&nbsp;&nbsp;&nbsp;</text>{{item.masterIntroduction}}</view>
+  </navigator>
+</view>
+
+
+<!-- 金鸽诗歌奖 -->
+<navigator class="test_wrap" url="/pages/competition_about/competition_award/index?competitionId={{awardList[0].awardCompetitionId}}"
+  hover-class="none">
+  <view class="test_banner">
+    <image mode="widthFix" src="../../icons/jingeshigejianghengfu.png"></image>
+  </view>
+  <view
+  class="test_content"
+  wx:for="{{awardList}}"
+  wx:key="awardId">
+    <view class="test_number">{{item.awardNumber}}</view>
+    <view class="test_author"><text>获奖人:</text>{{item.awardAuthorName}}</view>
+    <view class="test_province"><text>省份:</text>{{item.awardProvince}}</view>
+    <view class="test_time">{{item.awardCreateTime}}</view>
+  </view>
+</navigator>

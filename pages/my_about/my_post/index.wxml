@@ -1,0 +1,62 @@
+<view class="nav_button">
+  <view class="text_tip">类型：</view>
+  <view class="{{active===index? 'selected' : 'selection_button'}}"
+    wx:for="{{postTypeList}}"
+    wx:key="postTypeId"
+    bindtap="changeType"
+    data-index="{{index}}">
+    {{item.postTypeDetail}}
+  </view>
+</view>
+
+<view class="post_wrap">
+	<view wx:if="{{postList.length === 0}}">
+		<van-empty description="空空如也~~~" />
+	</view>
+	<view wx:else>
+		<view class="activity_wrap"
+			wx:for="{{postList}}"
+			wx:key="postId">
+			<navigator url="/pages/post_about/post_detail/index?postId={{item.postId}}" hover-class="none">
+				<view class="time_and_yunduo">
+					<view class="iconfont icon-duilianyun"></view>
+					<view class="active_time">{{item.postCreateTime}}</view>
+				</view>
+				<view class="couplet_content_wrap">
+					<view class="couplet_title">{{item.postTitle}}</view>
+					<view class="couplet_line">
+						<view class="iconfont icon-tags"></view>
+						<view class="couplet_text">{{item.postFirstLine}}</view>
+					</view>
+					<view class="couplet_line">
+						<view class="iconfont icon-tags"></view>
+						<view class="couplet_text">{{item.postSecondLine}}</view>
+					</view>
+				</view>
+			</navigator>
+			<view class="post_data_wrap">
+				<view class="iconfont icon-liulan"><text>{{item.browses}}</text></view>
+				<view class="iconfont icon-dianzan"><text>{{item.postLikes}}</text></view>
+				<view class="iconfont icon-pinglun"><text>{{item.postComments}}</text></view>
+				<view class="iconfont icon-wodeshoucang"><text>{{item.postCollections}}</text></view>
+				<view class="xiugai_shanshu" bindtap="modifyOrDelete"	data-index="{{index}}">
+					<text class="iconfont icon-xiugai"></text>
+					<text>/</text>
+					<text class="iconfont icon-shanchu"></text>
+				</view>
+			</view>	
+		</view>	
+	</view>
+
+</view>
+
+<van-action-sheet
+	show="{{ show }}"
+	actions="{{ actions }}"
+	cancel-text="取消"
+	bind:cancel="closeAction"
+	bind:select="selectAction"
+/>
+
+<van-dialog id="van-dialog" />
+<van-toast id="van-toast" />

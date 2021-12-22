@@ -1,0 +1,118 @@
+<!-- 自定义导航栏 -->
+<NavBar></NavBar>
+
+<!-- 用户信息 -->
+<view class="user_info_wrap">
+  <view class="user_image">
+    <image mode="scaleToFill" src="{{myInfo.userPortrait}}"></image>
+  </view>
+  <view class="name_and_motto">
+    <view class="name">{{myInfo.userNickname}}</view>
+    <view class="motto">{{myInfo.userMotto}}</view>
+  </view>
+  <view class="to_detail_and_tags">
+    <view class="tags">
+      <view wx:if="{{myInfo.userType === 0}}"><van-tag plain size="large" type="danger">普通用户</van-tag></view>
+      <view wx:elif="{{myInfo.userType === 1}}"><van-tag plain size="large" type="danger">协会会员</van-tag></view>
+      <view wx:elif="{{myInfo.userType === 2}}"><van-tag plain size="large" type="danger">楹联家</van-tag></view>
+      <view wx:elif="{{myInfo.userType === 3}}"><van-tag plain size="large" type="danger">楹联家</van-tag><van-tag plain size="large" type="danger">协会会员</van-tag></view>
+    </view>
+    <view class="to_detail"><navigator url="/pages/person_about/user_detail/index?userId={{userId}}" hover-class="none">个人主页 ></navigator></view>
+  </view>
+</view>
+
+<!-- 我的服务 -->
+<view class="service_wrap">
+  <view class="title">我的服务</view>
+  <view class="line_list">
+    <navigator class="my_service_wrap" url="/pages/my_about/my_information/index" hover-class="none">
+      <view class="iconfont icon-wodeziliao"></view>
+      <view class="my_service">我的资料</view>
+    </navigator>
+    <navigator class="my_service_wrap" url="/pages/my_about/my_post/index" hover-class="none">
+      <view class="iconfont icon-wodetiezi"></view>
+      <view class="my_service">我的帖子</view>
+    </navigator>
+    <navigator class="my_service_wrap" url="/pages/my_about/my_couplet/index" hover-class="none">
+      <view class="iconfont icon-wodeyinglian"></view>
+      <view class="my_service">我的楹联</view>
+    </navigator>
+    <navigator class="my_service_wrap" url="/pages/my_about/my_bookshelf/index" hover-class="none">
+      <view class="iconfont icon-wodeshujia"></view>
+      <view class="my_service">我的书架</view>
+    </navigator>
+  </view>
+
+  <view class="line_list">
+    <navigator class="my_service_wrap" url="/pages/my_about/my_collection/index" hover-class="none">
+      <view class="iconfont icon-wodeshoucang"></view>
+      <view class="my_service">我的收藏</view>
+    </navigator>
+    <navigator class="my_service_wrap" url="/pages/my_about/my_attention/index" hover-class="none">
+      <view class="iconfont icon-wodeguanzhu"></view>
+      <view class="my_service">我的关注</view>
+    </navigator>
+    <navigator class="my_service_wrap" url="/pages/my_about/my_fan/index" hover-class="none">
+      <view class="iconfont icon-wodefensi"></view>
+      <view class="my_service">我的粉丝</view>
+    </navigator>
+    <navigator class="my_service_wrap" url="/pages/my_about/my_browse/index" hover-class="none">
+      <view class="iconfont icon-zuijinliulan"></view>
+      <view class="my_service">最近浏览</view>
+    </navigator>
+  </view>
+</view>
+
+<!-- 个人服务 -->
+<view class="service_wrap">
+  <view class="title">个人服务</view>
+  <view class="line_list">
+    <navigator class="my_service_wrap" url="/pages/my_about/my_notice/index" hover-class="none">
+      <view wx:if="{{noticeNum !== 0}}">
+        <van-icon name="chat-o" info="{{noticeNum}}" class="iconfont"/>
+      </view>
+      <view wx:else=""><van-icon name="chat-o" class="iconfont"/></view>
+      <view class="my_service">我的通知</view>
+    </navigator>
+    <view class="my_service_wrap">
+      <view class="iconfont icon-bianjigerenziliao"></view>
+      <view class="my_service">更改资料</view>
+      <button class="hidden_button" bindtap="modifyInformation"></button>
+    </view>
+    <view class="my_service_wrap">
+      <view class="iconfont icon-kefu"></view>
+      <view class="my_service">联系客服</view>
+      <button class="hidden_button" open-type="contact"></button>
+    </view>
+    <view class="my_service_wrap">
+      <view class="iconfont icon-tuichudenglu"></view>
+      <view class="my_service">退出程序</view>
+      <button class="hidden_button" bindtap="exit"></button>
+    </view>
+  </view>
+</view>
+
+<!-- 会员服务 -->
+<view class="service_wrap">
+  <view class="title">会员服务</view>
+  <view class="line_list">
+    <view class="my_service_wrap">
+      <view class="iconfont icon-shenqinghuiyuan"></view>
+      <view class="my_service">申请会员</view>
+      <button class="hidden_button" bindtap="applyMember"></button>
+    </view>
+    <view class="my_service_wrap">
+      <view class="iconfont icon-renzheng"></view>
+      <view class="my_service">认证会员</view>
+      <button class="hidden_button" bindtap="certificateMember"></button>
+    </view>
+    <view class="my_service_wrap" url="/pages/my_about/my_member/index" hover-class="none">
+      <view class="iconfont icon-wodehuiyuan"></view>
+      <view class="my_service">我的会员</view>
+      <button class="hidden_button" bindtap="getMember"></button>
+    </view>
+    <!-- 空，满足排版需要 -->
+    <view class="my_service_wrap">
+    </view>
+  </view>
+</view>

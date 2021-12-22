@@ -1,0 +1,5 @@
+<!-- tohtml工具渲染markdown -->
+<view class="container">
+  <towxml nodes="{{newsContent}}"/>
+</view>
+<!-- <rich-text nodes="{{newsContent}}"></rich-text> -->

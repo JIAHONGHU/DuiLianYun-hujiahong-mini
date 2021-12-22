@@ -1,0 +1,11 @@
+<!-- 自定义顶部栏 -->
+<view class="nav_bar" style="height:{{navBarHeight}}px;">
+	<!-- 导航栏背景图片 -->
+	<image class="backgroundImg" style="margin-top: {{navStatusHeight}}px;" mode="widthFix" src="{{navBarImg}}"/>
+</view>
+
+<!-- 
+	内容区域：
+	自定义顶部栏用的fixed定位，会遮盖到下面内容，注意设置好间距
+-->
+<view class="content" style="margin-top:{{navBarHeight}}px;"></view>

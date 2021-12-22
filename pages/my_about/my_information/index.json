@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "vant-divider": "@vant/weapp/divider/index"
+  },
+  "navigationBarTitleText": "我的资料",
+  "enablePullDownRefresh": false
+}

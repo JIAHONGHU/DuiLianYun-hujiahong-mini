@@ -1,0 +1,108 @@
+page{
+  background-color: #ebebeb;
+}
+.attention_wrap{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20rpx 0;
+  margin: 10rpx 10rpx;
+  background-color: #ffffff;
+  border: 1rpx solid #cccccc;
+  border-radius: 20rpx;
+  navigator{
+    flex: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .portrait{
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      image{
+        width: 100rpx;
+        height: 100rpx;
+        border-radius: 50%;
+      }
+    }
+    .name_and_introduction{
+      flex: 3;
+      height: 100rpx;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      .name{
+        color: #faae58;
+        font-size: 34rpx;
+      }
+      .introduction{
+        color: #353535;
+        font-size: 28rpx;
+        display: -webkit-box;
+        overflow: hidden;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+      }
+    }    
+  }
+  .attention{
+    flex: 1;
+    position: relative;
+    text-align: center;
+    padding-right: 10rpx;
+    .iconfont {
+      font-size: 70rpx;
+      color: #faae58;
+    }
+  }
+}
+
+.ancient_wrap{
+  padding: 20rpx 0;
+  margin: 10rpx 10rpx;
+  background-color: #ffffff;
+  border: 1rpx solid #cccccc;
+  border-radius: 20rpx;
+  navigator{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .portrait{
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 170rpx;
+      image{
+        width: 100rpx;
+        height: 100rpx;
+        border-radius: 50%;
+      }
+      .iconfont{
+        color: #faae58;
+        font-size: 40rpx;
+      }
+    }
+    .name_and_introduction{
+      flex: 4;
+      display: flex;
+      height: 170rpx;
+      flex-direction: column;
+      padding-right: 20rpx;
+      .name{
+        color: #faae58;
+        font-size: 34rpx;
+      }
+      .introduction{
+        color: #353535;
+        font-size: 28rpx;
+        display: -webkit-box;
+        overflow: hidden;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+      }
+    }    
+  }
+}

@@ -1,0 +1,152 @@
+page{
+  width: 750rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(247, 245, 245, 0.87);
+}
+.top_page{
+  width: 700rpx;
+  padding-top: 20rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: rgb(153, 152, 152) solid 5rpx;
+  
+}
+.document_title{
+  width: 620rpx;
+  border: rgb(11, 204, 204) solid 2rpx;
+  background-color: white;
+}
+.document_image{
+  width: 180rpx;
+  height: 220rpx;
+  float: left;
+  margin: 10rpx 20rpx;
+}
+.document_info{
+  width: 380rpx;
+  height: 220rpx;
+  margin-top: 8rpx;
+  float: left;
+}
+.document_name{
+  width:260rpx;
+  float: left;
+  font-size: 32rpx;
+}
+.document_introduction{
+  margin-top: 8rpx;
+  font-size: 26rpx;
+  float: left;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+
+}
+.document_botton{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 550rpx;
+  margin: 30rpx 0;
+}
+.document_rate{
+  font-size: 35rpx;
+  line-height: 35rpx;
+  width: 550rpx;
+  margin-bottom: 25rpx;
+  padding: 20rpx ;
+  background-color: white;
+  border: rgb(211, 209, 209) solid 3rpx;
+  border-radius: 10rpx;
+  box-shadow: 0rpx 5rpx 5rpx #b3b2b2
+}
+.comment_title{
+  width: 700rpx;
+  float: left;
+  padding-top: 10rpx;
+  font-size: 32rpx;
+  padding-bottom: 10rpx;
+}
+.bottom_page{
+  width: 700rpx;
+  display: flex;
+  flex-direction: column;
+}
+.buttom_page scroll-view{
+  width: 750rpx;
+  height: 500rpx;
+  background-color: aqua;
+}
+.post_comment{
+  width: 750rpx;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  
+}
+.post_comment_body{
+  width:700rpx;
+  height: 100rpx;
+  position: fixed;
+  bottom: 0rpx;
+  left: 25rpx;
+  border-top: rgb(211, 209, 209) solid 3rpx;
+  background-color: rgba(247, 245, 245, 1);
+}
+.post_comment_bottom{
+  width: 750rpx;
+  height: 80rpx;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background-color: #dbdadaa1;
+}
+.user_portrait{
+  width: 80rpx;
+  height: 80rpx;
+  float: left;
+  margin-top: 10rpx;
+  border-radius: 50%;
+}
+.add_comment_pop{
+  width: 560rpx;
+  height: 75rpx;
+  float: right;
+  border-radius: 50rpx;
+  margin-top: 10rpx;
+  font-size: 35rpx;
+  line-height: 70rpx;
+  color: #5f5f5f;
+  border: #b3b2b2 solid 3rpx;
+  padding-left: 25rpx;
+}
+
+.comment_box{
+  height: 500rpx;
+}
+
+.comment_content_box{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.userNickName_box{
+  height: 40rpx;
+  width: 250rpx;
+  float: left;
+  padding-left: 10rpx;
+  font-size: 30rpx;
+  color: #353535;
+}
+.documentCommentTime_box{
+  height: 40rpx;
+  width: 250rpx;
+  font-size: 30rpx;
+  float: left;
+  color: #939292;
+  padding-left: 10rpx;
+}

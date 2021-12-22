@@ -1,0 +1,112 @@
+page {
+  background-color: #ebebeb;
+}
+.master_wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20rpx 0;
+  margin: 10rpx 10rpx;
+  background-color: #ffffff;
+  border: 1rpx solid #cccccc;
+  border-radius: 20rpx;
+}
+.master_wrap navigator {
+  flex: 3.8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.master_wrap navigator .portrait {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.master_wrap navigator .portrait image {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+.master_wrap navigator .name_and_introduction {
+  flex: 3;
+  height: 100rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.master_wrap navigator .name_and_introduction .name {
+  color: #faae58;
+  font-size: 34rpx;
+}
+.master_wrap navigator .name_and_introduction .introduction {
+  color: #353535;
+  font-size: 28rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+.master_wrap .attention {
+  flex: 1;
+  position: relative;
+  text-align: center;
+  padding-right: 10rpx;
+}
+.master_wrap .attention .iconfont {
+  font-size: 70rpx;
+}
+.master_wrap .attention .icon-guanzhu2 {
+  color: #faae58;
+}
+.master_wrap .attention .icon-yiguanzhu2 {
+  color: #cccccc;
+}
+.ancient_wrap {
+  padding: 20rpx 0;
+  margin: 10rpx 10rpx;
+  background-color: #ffffff;
+  border: 1rpx solid #cccccc;
+  border-radius: 20rpx;
+}
+.ancient_wrap navigator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ancient_wrap navigator .portrait {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 170rpx;
+}
+.ancient_wrap navigator .portrait image {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+.ancient_wrap navigator .portrait .iconfont {
+  color: #faae58;
+  font-size: 40rpx;
+}
+.ancient_wrap navigator .name_and_introduction {
+  flex: 4;
+  display: flex;
+  height: 170rpx;
+  flex-direction: column;
+  padding-right: 20rpx;
+}
+.ancient_wrap navigator .name_and_introduction .name {
+  color: #faae58;
+  font-size: 34rpx;
+}
+.ancient_wrap navigator .name_and_introduction .introduction {
+  color: #353535;
+  font-size: 28rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}

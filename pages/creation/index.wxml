@@ -1,0 +1,86 @@
+<!-- 自定义导航栏 -->
+<NavBar></NavBar>
+<!-- 大标题 -->
+<view class="view_title">
+  <text class="view_name">创作帖子</text>
+</view>
+<!-- 表单 -->
+<van-cell-group>
+  <view class="author_wrap common">
+    <van-field label="作者" size="large"  required adjust-position
+      value="{{formData.postUserName}}" placeholder="请输入用户名"
+      title-width="3em" bind:change="changeUserName"
+      class="author_van"
+    />  
+  </view>
+
+  <!-- <view class="title_wrap common">
+    <van-field label="标题" size="large"  required adjust-position autosize type="textarea"
+      value="{{formData.postTitle}}" placeholder="请输入帖子标题"
+      title-width="3em" bind:change="changeTitle"
+      class="title_van"
+    />
+  </view> -->
+
+  <view class="type_wrap common">
+    <view class="xing">*</view><view class="type">类型</view>
+    <van-dropdown-menu class="type_van">
+      <van-dropdown-item value="{{ formData.postTypeId }}" options="{{ postTypeList }}" bind:change="changeType" />
+    </van-dropdown-menu>  
+  </view>
+
+  <view class="common">
+    <van-field label="内容" size="large" required placeholder="按标题/上联/下联顺序，换行分隔"
+      title-width="2em" class="title_van" readonly="{{true}}"
+    />
+    <view class="content_warp">
+      <textarea adjust-position value="{{postContent}}" placeholder="请输入帖子内容" bindinput="changeContent" bindblur="doBlur" bindfocus="doFocus" maxlength="-1"
+      ></textarea>
+      <view class="error_message" wx:if="{{errorMessage}}">{{errorMessage}}</view>
+    </view>          
+  </view>
+
+  <view style="padding: 0 10rpx; padding-top: 5px;">
+    <view class="content_warp_tip" wx:if="{{isShow}}">
+      <view class="error_message">请仔细检查是否解析有误</view>
+      <textarea value="{{tempData}}" auto-height disabled="{{true}}" maxlength="-1"
+      ></textarea>
+    </view>      
+  </view>
+  
+
+  <!-- <view class="secondLine_wrap common">
+    <van-field label="下联" size="large"  autosize type="textarea" required adjust-position
+      value="{{formData.postSecondLine}}" placeholder="请输入帖子下联"
+      title-width="3em" bind:change="changeSecondLine"
+      class="title_van"
+    />
+  </view> -->
+
+  <view class="common">
+    <van-field label="赏析" size="large" placeholder="此项为可选项"
+      title-width="2em" readonly="{{true}}" class="title_van"
+    />
+    <view class="form_warp">
+      <textarea adjust-position value="{{formData.postAppreaciation}}" placeholder="请输入帖子赏析" bindinput="changeAppreaciation" maxlength="-1"></textarea>
+    </view>
+  </view>
+
+  <view class="common">
+    <van-field label="注释" size="large" title-width="2em" readonly="{{true}}"
+      class="title_van" placeholder="此项为可选项"
+    />
+    <view class="form_warp">
+      <textarea adjust-position value="{{formData.postExplanation}}" placeholder="请输入帖子注释" bindinput="changeExplanation" maxlength="-1"></textarea>
+    </view>
+  </view>
+
+  <view class="submit_wrap">
+    <van-button round color="#faae58" form-type="submit" bind:click="submit">提交审核</van-button>
+    <van-button round type="danger" form-type="reset" bind:click="reset">重置内容</van-button>
+  </view>
+
+  <!-- 提示插槽 -->
+  <van-notify id="van-notify"/>
+
+</van-cell-group>

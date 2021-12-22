@@ -1,0 +1,44 @@
+<!-- 输入姓名搜索框 -->
+<van-search value="{{ inputKey }}" placeholder="请输入姓名" 
+  shape="round" background="#faae58" clearable="{{false}}"
+  bind:change="changeInput" bind:search="onSearch" bind:cancel="cancelSearch" show-action
+></van-search>
+
+<view wx:if="{{attentionList.length === 0}}">
+  <van-empty description="空空如也~~~" />
+</view>
+<view wx:else>
+  <!-- 关注用户列表 -->
+  <view
+    class="attention_wrap"
+    wx:for="{{attentionList}}"
+    wx:key="userId"
+    >
+    <!-- 点击用户跳转到用户详情页面 -->
+    <navigator url="/pages/person_about/user_detail/index?userId={{item.userId}}" hover-class="none">
+      <view class="portrait">
+        <image mode="scaleToFill" src="{{item.userPortrait}}"></image>
+      </view>
+      <view class="name_and_introduction">
+        <view class="name">{{item.userNickname}}</view>
+        <view class="introduction">{{item.userIntroduction}}</view>
+      </view>  
+    </navigator>
+    <!-- 点击列表中的关注按钮触发事件 -->
+    <view class="attention" bindtap="doAttention" data-userid="{{item.userId}}" data-index="{{index}}" data-usernickname="{{item.userNickname}}">
+      <view class="iconfont icon-dui1"></view>
+    </view>
+  </view>
+</view>
+
+<!-- 取消关注弹出页面 -->
+<van-action-sheet
+  show="{{ show }}"
+  actions="{{ actions }}"
+  description="确定取消关注用户--{{selectedUserNickname}}--吗？"
+  cancel-text="取消操作"
+  bind:cancel="cancelAction"
+  bind:select="selectAction"
+/>
+<van-dialog id="van-dialog" />
+<van-toast id="van-toast" />

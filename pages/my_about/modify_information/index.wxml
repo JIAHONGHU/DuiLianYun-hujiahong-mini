@@ -1,0 +1,100 @@
+<!-- 修改个人资料信息单元格 -->
+<van-cell-group>
+
+  <!-- 修改我的头像 -->
+  <view class="common_wrap portrait_wrap">
+    <view class="xing">*</view><view class="portrait">我的头像</view>
+    <view>
+      <van-uploader file-list="{{ fileList }}" bind:after-read="uploadImg" max-count="1" bind:delete="deleteImg" upload-text="选择头像" deletable="{{ true }}" />
+    </view>
+  </view>
+
+  <!-- 修改昵称 -->
+  <view class="common_wrap">
+    <van-field label="昵称" size="large" required adjust-position
+      value="{{formData.userNickname}}" placeholder="{{formData.userNickname}}"
+      title-width="4em" bind:change="changeUserNickname"
+    />  
+  </view>
+
+  <!-- 修改姓名 -->
+  <view class="common_wrap">
+    <van-field label="姓名" size="large" required adjust-position
+      value="{{formData.userName}}" placeholder="{{formData.userName}}"
+      title-width="4em" bind:change="changeUserName"
+    />
+  </view>
+
+  <!-- 修改座右铭 -->
+  <view class="common_wrap">
+    <van-field label="座右铭" size="large" required adjust-position autosize type="textarea" 
+      value="{{formData.userMotto}}" placeholder="{{formData.userMotto}}"
+      title-width="4em" bind:change="changeUserMotto"
+    />
+  </view>
+
+  <!-- 修改出生日期 -->
+  <view class="common_wrap birthday_wrap">
+    <view class="xing">*</view><view class="birthday">出生日期</view>
+    <view class="birthday_van" bindtap="showTime">{{formData.userBirthday}}</view>
+    <!-- 选择弹出层 -->
+    <van-popup show="{{ isShow }}" round position="bottom"
+      custom-style="height: 60%">
+      <!-- 日期选择组件 -->
+      <van-datetime-picker
+        type="date"
+        value="{{ currentDate }}"
+        title="请选择出生日期"
+        bind:confirm="confirmTime"
+        bind:cancel="cancelTime"
+        min-date="{{ minDate }}"
+        max-date="{{ maxDate }}"
+        formatter="{{ formatter }}"
+      />     
+    </van-popup>
+  </view>
+
+  <!-- 修改手机 -->
+  <view class="common_wrap">
+    <van-field label="手机" size="large" required adjust-position
+      value="{{formData.userPhone}}" placeholder="{{formData.userPhone}}"
+      error-message="{{phoneIsRight? '' : '手机号格式错误'}}"
+      title-width="4em" bind:change="changeUserPhone" maxlength='11'
+      class="title_van" bind:blur="losePhoneBlur"
+    />
+  </view>
+
+  <!-- 修改住址 -->
+  <view class="common_wrap">
+    <van-field label="住址" size="large" required adjust-position
+      value="{{formData.userLocation}}" placeholder="{{formData.userLocation}}"
+      title-width="4em" bind:change="changeUserLocation"
+    />
+  </view>
+
+  <!-- 修改邮箱 -->
+  <view class="common_wrap">
+    <van-field label="邮箱" size="large" required adjust-position
+      value="{{formData.userEmail}}" placeholder="{{formData.userEmail}}"
+      title-width="4em" bind:change="changeUserEmail" bind:blur="loseEmailBlur"
+      error-message="{{emailIsRight? '' : '邮箱格式错误'}}"
+    />
+  </view>
+
+  <!-- 修改个人简介 -->
+  <view class="common_wrap">
+    <van-field label="个人简介" size="large" autosize type="textarea" required
+    adjust-position value="{{formData.userIntroduction}}" placeholder="{{formData.userIntroduction}}"
+      title-width="4em" bind:change="changeUserIntroduction"
+    />
+  </view>
+
+  <!-- 提交或重置修改信息 -->
+  <view class="submit_wrap">
+    <van-button round color="#faae58" form-type="submit" bind:click="submit">提交修改</van-button>
+    <van-button round type="danger" form-type="reset" bind:click="reset">重置内容</van-button>
+  </view>
+
+  <van-notify id="van-notify"/>
+
+</van-cell-group>

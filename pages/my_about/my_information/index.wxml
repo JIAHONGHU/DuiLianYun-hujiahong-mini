@@ -1,0 +1,64 @@
+<view class="page_background">
+  <view class="account_info">
+    <!-- 用户信息 -->
+    <view class="head_img">
+      头像
+      <view class="portrait_box">
+        <image class="user_portrait" src="{{formData.userPortrait}}" mode="scaleToFill"></image>
+      </view>
+    </view>
+    <view class="text_info">
+    昵称
+      <view class="content">
+        {{formData.userNickname}}
+      </view>
+    </view>
+    <view class="motto_info">
+    座右铭
+      <view class="content">
+        {{formData.userMotto}}
+      </view>
+    </view>
+    
+  </view>
+
+  <view class="user_info">
+    <view class="text_info">
+    姓名
+      <view class="content">
+        {{formData.userName}}
+      </view>
+    </view>
+
+    <view class="text_info">
+    生日
+      <view class="content">
+        {{formData.userBirthday}}
+      </view>
+    </view>
+    <view class="text_info">
+    所在地
+      <view class="content">
+        {{formData.userLocation}}
+      </view>
+    </view>
+    <view class="text_info">
+    手机
+      <view class="content">
+        {{formData.userPhone}}
+      </view>
+    </view>
+    <view class="text_info">
+    邮箱
+      <view class="content">
+        {{formData.userEmail}}
+      </view>
+    </view>
+    <view class="brief_info">
+    个人简介
+      <view class="content" style="padding: 20rpx 0;display: inline;float:right;">
+        {{formData.userIntroduction}}
+      </view>
+    </view>
+  </view>
+</view>

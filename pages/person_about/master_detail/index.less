@@ -1,0 +1,165 @@
+.person_detail{
+  .background_image{
+    height: 240rpx;
+    overflow: hidden;
+    image{
+      width: 100%;
+    }
+  }
+  .portrait_and_infos{
+    display: flex;
+    align-items: center;
+    margin-top: -20rpx;
+    padding: 0 10rpx;
+    .portrait{
+      image{
+        width: 180rpx;
+        height: 180rpx;
+        border: 6rpx solid #ffffff;
+        border-radius: 50%;
+        background-color: #ffffff;
+      };
+    }
+    .portrait_right{
+      padding-left: 10rpx;
+      .portrait_right_up{
+        display: flex;
+        align-items: flex-end;
+        padding-top: 10rpx;
+        padding-bottom: 2px;
+        .name{
+          color: #faae58;
+          font-size: 40rpx;
+          font-weight: bold;
+        }
+        .dynasty{
+          color: #353535;
+          padding-left: 20rpx;
+          font-size: 28rpx;
+        }
+      }
+      .portrait_right_down{
+        color: #353535;
+        font-size: 28rpx;
+        display: -webkit-box;
+        overflow: hidden;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+      }
+    }
+  }
+  .name_and_motto{
+    display: flex;
+    align-items: flex-end;
+    padding-top: 20rpx;
+    padding-bottom: 20rpx;
+    border-bottom: 1rpx solid #cccccc;
+    .name{
+      padding-left: 40rpx;
+      font-size: 44rpx;
+      color: #353535;
+      font-weight: bold;
+      color: #faae58;
+    }
+    .motto{
+      padding-left: 40rpx;
+      font-size: 30rpx;
+      color: #535353;
+      display: -webkit-box;
+      overflow: hidden;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 1;
+    }
+  }
+}
+
+.activity_wrap{
+  padding: 0rpx 20rpx;
+  padding-top: 10rpx;
+  padding-bottom: 20rpx;
+  margin-top: 10rpx;
+  margin-bottom: 30rpx;
+  border-bottom: 4rpx solid #e9e9e9;
+  border-top: 4rpx solid #e9e9e9;
+  background-color: #ffffff;
+  .time_and_yunduo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .active_time{
+      display: flex;
+      justify-content: flex-start;
+    }
+    .icon-duilianyun{
+      display: flex;
+      color: #faae58;
+      justify-content: flex-end;
+    }
+  }
+  .content_wrap{
+    font-size: 32rpx;
+    .title{
+      font-size: 38rpx;
+      text-align: center;
+      color: #353535;
+      padding: 10rpx 0;
+    }
+    .type{
+      font-size: 28rpx;
+      text-align: center;
+      color: #353535;
+      padding: 10rpx 0;
+    }
+    .line{
+      display: flex;
+      justify-content: center;
+      padding: 10rpx 0;
+      color: #353535;
+      .icon-tags{
+          color: #faae58;
+      }
+      .text{
+          display: -webkit-box;
+          overflow: hidden;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 3;
+      }      
+    }
+  }
+  .active_action_wrap{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #5c5c5c;
+    padding-top: 10rpx;
+    font-size: 28rpx;
+    .iconfont{
+      color: #faae58;
+      font-size: 50rpx;
+    }
+  }
+  .data_wrap{
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+    padding-top: 28rpx;
+    color: #353535;
+    .iconfont{
+      font-size: 32rpx;
+      padding: 0 10rpx;
+      text{
+        padding-left: 10rpx;
+      }
+    }
+  }
+}
+
+.total_wrap{
+  background-color: #ffffff;
+  padding: 10rpx 20rpx;
+  border-left: 10rpx solid #faae58;
+  font-size: 36rpx;
+  color: #353535;
+  margin: 10rpx 10rpx;
+  font-size: 30rpx;
+}

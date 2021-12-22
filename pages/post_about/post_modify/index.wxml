@@ -1,0 +1,62 @@
+<view class="view_title">
+  <text class="view_name">修改帖子</text>
+</view>
+
+<van-cell-group>
+  <view class="common">
+    <van-field label="作者" size="large" required adjust-position disabled
+      value="{{formData.postUserName}}" placeholder="请输入用户名"
+      title-width="3em" bind:change="changeUserName"
+    />  
+  </view>
+
+  <view class="common">
+    <van-field label="标题" size="large" required adjust-position autosize type="textarea"
+      value="{{formData.postTitle}}" placeholder="{{formData.postTitle}}"
+      title-width="3em" bind:change="changeTitle"
+    />
+  </view>
+
+  <view class="common">
+    <van-field label="类型" size="large" required adjust-position disabled
+      value="{{formData.postType}}" placeholder="{{formData.postType}}"
+      title-width="3em"
+    />
+  </view>
+
+  <view class="common">
+    <van-field label="上联" size="large" autosize type="textarea" required adjust-position
+      value="{{formData.postFirstLine}}" placeholder="{{formData.postFirstLine}}"
+      title-width="3em" bind:change="changeFirstLine"
+    />
+  </view>
+
+  <view class="common">
+    <van-field label="下联" size="large" autosize type="textarea" required adjust-position
+      value="{{formData.postSecondLine}}" placeholder="{{formData.postSecondLine}}"
+      title-width="3em" bind:change="changeSecondLine"
+    />
+  </view>
+
+  <view class="common">
+    <van-field label="赏析" size="large" autosize type="textarea"
+    adjust-position value="{{formData.postAppreaciation}}" placeholder="{{formData.postAppreaciation}}"
+      title-width="3em" bind:change="changeAppreaciation"
+    />
+  </view>
+
+  <view class="common">
+    <van-field label="注释" size="large" autosize type="textarea"
+    adjust-position value="{{formData.postExplanation}}" placeholder="{{formData.postExplanation}}"
+      title-width="3em" bind:change="changeExplanation"
+    />
+  </view>
+
+  <view class="submit_wrap">
+    <van-button round color="#faae58" form-type="submit" bind:click="submit">提交修改</van-button>
+    <van-button round type="danger" form-type="reset" bind:click="reset">重置内容</van-button>
+  </view>
+
+  <van-notify id="van-notify"/>
+
+</van-cell-group>

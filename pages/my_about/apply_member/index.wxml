@@ -1,0 +1,88 @@
+<!-- 页面标题 -->
+<view class="view_title">
+  <text class="view_name">申请会员</text>
+</view>
+
+<!-- 申请会员信息单元格组 -->
+<van-cell-group>
+
+  <!-- 输入名字 -->
+  <view class="common_wrap">
+    <van-field label="名字" size="large"  required adjust-position
+      value="{{formData.memberName}}" placeholder="请输入名字"
+      title-width="4em" bind:change="changeMemberName"
+      class="author_van"
+    />  
+  </view>
+
+   <!-- 选择性别 -->
+  <view class="gender_wrap common_wrap">
+    <view class="xing">*</view><view class="gender">性别</view>
+    <van-radio-group class="gender_van"
+      value="{{ formData.memberGender }}"
+      bind:change="changeMemberGender"
+      direction="horizontal"
+    >
+      <van-radio name="男" checked-color="#faae58">男</van-radio>
+      <van-radio name="女" checked-color="#faae58">女</van-radio>
+    </van-radio-group>
+  </view>
+
+   <!-- 输入电话 -->
+  <view class="common_wrap">
+    <van-field label="电话" size="large"  required adjust-position
+      value="{{formData.memberPhone}}" placeholder="请输入电话"
+      error-message="{{phoneIsRight? '' : '手机号格式错误'}}"
+      title-width="4em" bind:change="changeMemberPhone" maxlength='11'
+      class="title_van" bind:blur="losePhoneBlur"
+    />
+  </view>
+
+   <!-- 输入身份证号 -->
+  <view class="common_wrap">
+    <van-field label="身份证号" size="large"  required adjust-position
+      value="{{formData.memberIdcard}}" placeholder="请输入身份证号"
+      error-message="{{idcardIsRight? '' : '身份证号格式错误'}}"
+      title-width="4em" bind:change="changeMemberIdcard"
+      class="title_van" bind:blur="loseIdcardBlur"
+    />
+  </view>
+   <!-- 出生日期选择 -->
+  <view class="common_wrap birthday_wrap">
+    <view class="xing">*</view><view class="birthday">出生日期</view>
+    <view class="{{active ? 'active_birthday_van' : 'birthday_van'}}" bindtap="showTime">{{formData.memberBirthday}}</view>
+     <!-- 选择弹出层 -->
+    <van-popup show="{{ isShow }}" round position="bottom"
+      custom-style="height: 40%">
+       <!-- 日期选择组件 -->
+      <van-datetime-picker
+        type="date"
+        value="{{ currentDate }}"
+        title="请选择出生日期"
+        bind:confirm="confirmTime"
+        bind:cancel="cancelTime"
+        min-date="{{ minDate }}"
+        max-date="{{ maxDate }}"
+        formatter="{{ formatter }}"
+      />     
+    </van-popup>
+  </view>
+
+  <!-- 输入申请理由 -->
+  <view class="common_wrap">
+    <van-field label="申请理由" size="large"  autosize type="textarea" required
+    adjust-position value="{{formData.memberApplicationReason}}" placeholder="请填写申请理由"
+      title-width="4em" bind:change="changeMemberApplicationReason"
+      class="title_van"
+    />
+  </view>
+
+  <!-- 提交申请或重置内容按钮 -->
+  <view class="submit_wrap">
+    <van-button round color="#faae58" form-type="submit" bind:click="submit">提交申请</van-button>
+    <van-button round type="danger" form-type="reset" bind:click="reset">重置内容</van-button>
+  </view>
+
+  <van-notify id="van-notify"/>
+
+</van-cell-group>

@@ -1,0 +1,87 @@
+<!-- 自定义导航栏 -->
+<NavBar></NavBar>
+<!-- 动态列表 -->
+<van-tabs active="{{ active }}" bind:change="onChange" animated swipeable color="#faae58">
+	<!-- 关注帖子列表 -->
+  <van-tab title="关注">
+		<view wx:if="{{activePostListA.length === 0}}">
+			<van-empty description="空空如也~~~" />		
+		</view>
+		<view wx:else>
+			<view class="activity_wrap"
+			wx:for="{{activePostListA}}"
+			wx:key="postId">
+				<!-- 点击头像一栏，跳转到个人页面 -->
+				<navigator url="/pages/person_about/user_detail/index?userId={{item.userId}}" hover-class="none">
+					<view class="user_info_wrap">
+						<image mode="scaleToFill" src="{{item.userImage}}"></image>
+						<view class="name_and_motto">
+							<view class="user_name">{{item.postUserName}}</view>
+							<view class="user_motto">{{item.userMotto}}</view>
+						</view>
+						<view class="active_time">{{item.postCreateTime}}</view>
+					</view>
+				</navigator>
+				<!-- 点击帖子部分，跳转到帖子详情页 -->
+				<navigator url="/pages/post_about/post_detail/index?postId={{item.postId}}" hover-class="none">
+					<view class="couplet_content_wrap">
+						<view class="couplet_title">{{item.postTitle}}</view>
+						<view class="couplet_type">类型：{{item.postType}}</view>
+						<view class="couplet_line">
+							<view class="iconfont icon-tags"></view>
+							<view class="couplet_text">{{item.postFirstLine}}</view>
+						</view>
+						<view class="couplet_line">
+							<view class="iconfont icon-tags"></view>
+							<view class="couplet_text">{{item.postSecondLine}}</view>
+						</view>
+					</view>
+					<view class="active_action_wrap">
+						<view>点赞 ~ 评论 ~ 收藏</view>
+						<view class="iconfont icon-duilianyun"></view>
+					</view>		
+				</navigator>		
+			</view>		
+		</view>
+	</van-tab>
+	<!-- 最新动态列表 -->
+  <van-tab title="最新">
+		<view wx:if="{{activePostListB.length === 0}}">
+			<van-empty description="空空如也~~~" />		
+		</view>
+		<view wx:else>
+			<view class="activity_wrap"
+			wx:for="{{activePostListB}}"
+			wx:key="postId">
+				<navigator url="/pages/person_about/user_detail/index?userId={{item.userId}}" hover-class="none">
+					<view class="user_info_wrap">
+						<image mode="scaleToFill" src="{{item.userImage}}"></image>
+						<view class="name_and_motto">
+							<view class="user_name">{{item.postUserName}}</view>
+							<view class="user_motto">{{item.userMotto}}</view>
+						</view>
+						<view class="active_time">{{item.postCreateTime}}</view>
+					</view>
+				</navigator>
+				<navigator url="/pages/post_about/post_detail/index?postId={{item.postId}}" hover-class="none">
+					<view class="couplet_content_wrap">
+						<view class="couplet_title">{{item.postTitle}}</view>
+						<view class="couplet_type">类型：{{item.postType}}</view>
+						<view class="couplet_line">
+							<view class="iconfont icon-tags"></view>
+							<view class="couplet_text">{{item.postFirstLine}}</view>
+						</view>
+						<view class="couplet_line">
+							<view class="iconfont icon-tags"></view>
+							<view class="couplet_text">{{item.postSecondLine}}</view>
+						</view>
+					</view>
+					<view class="active_action_wrap">
+						<view>点赞 ~ 评论 ~ 收藏</view>
+						<view class="iconfont icon-duilianyun"></view>
+					</view>		
+				</navigator>
+			</view>		
+		</view>
+	</van-tab>
+</van-tabs>

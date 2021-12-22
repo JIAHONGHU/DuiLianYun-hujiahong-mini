@@ -1,0 +1,17 @@
+<view>
+  <navigator class="cu-item" url="{{item.competitionStatus ? '/pages/competition_about/competition_contribution/index?competitionId=' + item.competitionId : '/pages/competition_about/competition_award/index?competitionId=' + item.competitionId}}" wx:for="{{competitionList}}" wx:key="competitionId" hover-class="none">
+    <image class="comp_image" mode="widthFix" src="{{item.competitionImage}}" ></image>
+    <view class="bar">
+      <view class="text-grey">{{item.competitionName}}</view>
+      <view class="text-gray">{{item.competitionStatus ? '来投稿吧' : '查看作品'}}</view>
+    </view>
+  </navigator>
+  <!-- 敬请期待提示 -->
+  <view class="cu-item">
+    <image class="comp_image" mode="widthFix" src="../../../icons/images/jingqingqidai.jpg" ></image>
+    <view class="bar">
+      <view class="text-grey">敬请期待</view>
+      <view class="text-gray">未发布</view>
+    </view>
+  </view>
+</view>

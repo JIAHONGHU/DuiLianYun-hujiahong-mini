@@ -1,0 +1,49 @@
+page{
+  background-color: #f5f5f5;
+}
+.cu-item {
+  margin: 30rpx;
+  display: flex;
+  border-radius: 20rpx;
+  flex-direction: column;
+  box-shadow: 4rpx 4rpx 16rpx #faae58;
+}
+
+.comp_image {
+  width: 690rpx;
+  border-top-left-radius: 20rpx;
+  border-top-right-radius: 20rpx;
+}
+
+.bar {
+  display: flex;
+  padding-right: 10rpx;
+  height: 100rpx;
+  background-color: #f8f8f8;
+  align-items: center;
+  justify-content: center;
+  border-bottom-left-radius: 20rpx;
+  border-bottom-right-radius: 20rpx;
+}
+
+.text-grey {
+  flex: 6;
+  padding: 0 10rpx;
+  font-size: 32rpx;
+  color: #353535;
+  /* 这里是让他只显示两行，多余的就省略号 */
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.text-gray {
+  flex: 1.5;
+  font-weight: bold;
+  font-size: 30rpx;
+  color: #ffffff;
+  text-align: center;
+  background-color: #a5a39a;
+  padding: 5rpx 10rpx 5rpx 10rpx;
+  border-radius: 15px;
+}

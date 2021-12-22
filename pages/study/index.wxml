@@ -1,0 +1,65 @@
+<!-- 自定义导航栏 -->
+<NavBar></NavBar>
+
+<van-tabs active="{{ active }}" bind:change="onChange" animated swipeable color="#faae58">
+  <van-tab title="最新">
+    <view wx:if="{{documentListA.length === 0}}">
+      <van-empty description="空空如也~~~" />
+    </view>
+    <view wx:else>
+      <navigator class="study_wrap"
+        wx:for="{{documentListA}}"
+        wx:key="documentId"
+        url="/pages/study_about/document_detail/index?documentId={{item.documentId}}"
+        hover-class="none">
+        <view class="study_picture">
+          <image mode="widthFix" src="{{item.documentPicture}}"></image>
+        </view>
+        <view class="name_and_introduction_and_score">
+          <view class="name">{{item.documentName}}</view>
+          <view class="introduction">{{item.documentIntroduction}}</view>
+          <view class="score">评分：{{item.documentScore}}</view>
+        </view>
+        <view class="star_wrap">
+          <view class="star">
+            <view class="star_num">{{item.documentStar}}</view>
+            <view class="iconfont icon-xingxing"></view>    
+          </view>
+          <view class="little_icon">
+          <view class="iconfont icon-duilianyun"></view>
+          </view>
+        </view>
+      </navigator>    
+    </view>
+  </van-tab>
+  <van-tab title="评分最高">
+    <view wx:if="{{documentListB.length === 0}}">
+      <van-empty description="空空如也~~~" />
+    </view>
+    <view wx:else>
+      <navigator class="study_wrap"
+        wx:for="{{documentListB}}"
+        wx:key="documentId"
+        url="/pages/study_about/document_detail/index?documentId={{item.documentId}}"
+        hover-class="none">
+        <view class="study_picture">
+          <image mode="widthFix" src="{{item.documentPicture}}"></image>
+        </view>
+        <view class="name_and_introduction_and_score">
+          <view class="name">{{item.documentName}}</view>
+          <view class="introduction">{{item.documentIntroduction}}</view>
+          <view class="score">评分：{{item.documentScore}}</view>
+        </view>
+        <view class="star_wrap">
+          <view class="star">
+            <view class="star_num">{{item.documentStar}}</view>
+            <view class="iconfont icon-xingxing"></view>    
+          </view>
+          <view class="little_icon">
+          <view class="iconfont icon-duilianyun"></view>
+          </view>
+        </view>
+      </navigator>    
+    </view>
+  </van-tab>
+</van-tabs>

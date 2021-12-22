@@ -1,0 +1,66 @@
+<!-- 搜索 -->
+<van-search value="{{ inputKey }}" placeholder="请输入楹联家姓名" 
+  shape="round" background="#faae58" clearable="{{false}}"
+  bind:change="changeInput" bind:search="onSearch" bind:cancel="cancelSearch" show-action
+></van-search>
+<!-- 楹联家列表 -->
+<van-tabs active="{{ active }}" bind:change="changeTab" animated swipeable color="#faae58">
+  <!-- 当代 -->
+  <van-tab title="当代">
+    <view wx:if="{{currentMasterList.length === 0}}">
+      <van-empty image="search" description="空空如也~~~" />
+    </view>
+    <view wx:else>
+      <view
+        class="master_wrap"
+        wx:for="{{currentMasterList}}"
+        wx:key="masterBindedUserId"
+        >
+        <!-- 如果是当代,需要跳转到user_detail -->
+        <navigator url="/pages/person_about/user_detail/index?userId={{item.masterBindedUserId}}" hover-class="none">
+          <view class="portrait">
+            <image mode="scaleToFill" src="{{item.masterPhoto}}"></image>
+          </view>
+          <view class="name_and_introduction">
+            <view class="name">{{item.masterName}}</view>
+            <view class="introduction">{{item.masterIntroduction}}</view>
+          </view>  
+        </navigator>
+        <!-- 绑定数据只能是小写 -->
+        <view class="attention" bindtap="doAttention" data-masterbindeduserid="{{item.masterBindedUserId}}">
+          <view class="{{item.attention ? 'iconfont icon-yiguanzhu2' : 'iconfont icon-guanzhu2'}}">
+          </view>
+        </view>
+      </view>    
+    </view>
+	</van-tab>
+  <!-- 古代 -->
+  <van-tab title="古代">
+    <view wx:if="{{ancientMasterList.length === 0}}">
+      <van-empty image="search" description="空空如也~~~" />
+    </view>
+    <view wx:else>
+      <view
+        class="ancient_wrap"
+        wx:for="{{ancientMasterList}}"
+        wx:key="masterId"
+        >
+        <!-- 如果是古代,需要跳转到master_detail -->
+        <navigator url="/pages/person_about/master_detail/index?masterId={{item.masterId}}" hover-class="none">
+          <view class="portrait">
+            <image mode="scaleToFill" src="{{item.masterPhoto}}"></image>
+            <view class="iconfont icon-duilianyun"></view>
+          </view>
+          <view class="name_and_introduction">
+            <view class="name">{{item.masterName}}</view>
+            <view class="introduction">{{item.masterIntroduction}}</view>
+          </view>  
+        </navigator>
+      </view>    
+    </view>
+  </van-tab>
+</van-tabs>
+
+<van-dialog id="van-dialog" />
+<van-toast id="van-toast" />
+

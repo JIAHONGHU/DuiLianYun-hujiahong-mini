@@ -1,0 +1,20 @@
+.couplet_wrap {
+  height: auto;
+  margin: 0 10rpx;
+  padding: 0 10rpx;
+}
+.drop_wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 2rpx solid #cccccc;
+  margin-bottom: 10rpx;
+}
+.drop_wrap .item {
+  flex: 1;
+}
+.drop_wrap .mid {
+  width: 1rpx;
+  height: 80rpx;
+  background-color: #cccccc;
+}

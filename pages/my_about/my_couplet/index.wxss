@@ -1,0 +1,101 @@
+page {
+  background-color: #f8f8f8;
+}
+.nav_button {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10rpx 10rpx;
+}
+.nav_button .text_tip {
+  border-left: 10rpx solid #faae59;
+  padding: 10rpx 0;
+  padding-left: 10rpx;
+}
+.nav_button .selection_button {
+  border: 1rpx solid #faae59;
+  padding: 10rpx 20rpx;
+  border-radius: 20rpx;
+  margin-right: 20rpx;
+  color: #353535;
+}
+.selected {
+  background-color: #faae59;
+  color: #ffffff;
+  padding: 10rpx 20rpx;
+  border-radius: 20rpx;
+  margin-right: 20rpx;
+}
+.activity_wrap {
+  padding: 0rpx 10rpx;
+  padding-top: 10rpx;
+  padding-bottom: 20rpx;
+  margin-top: 10rpx;
+  margin-bottom: 30rpx;
+  border-bottom: 4rpx solid #e9e9e9;
+  border-top: 4rpx solid #e9e9e9;
+  background-color: #ffffff;
+}
+.activity_wrap .time_and_yunduo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.activity_wrap .time_and_yunduo .active_time {
+  display: flex;
+  justify-content: flex-start;
+}
+.activity_wrap .time_and_yunduo .icon-duilianyun {
+  display: flex;
+  color: #faae58;
+  justify-content: flex-end;
+}
+.activity_wrap .couplet_content_wrap {
+  font-size: 32rpx;
+}
+.activity_wrap .couplet_content_wrap .couplet_title {
+  font-size: 38rpx;
+  text-align: center;
+  color: #353535;
+  padding: 10rpx 0;
+}
+.activity_wrap .couplet_content_wrap .couplet_line {
+  display: flex;
+  justify-content: center;
+  padding: 10rpx 0;
+  color: #353535;
+}
+.activity_wrap .couplet_content_wrap .couplet_line .icon-tags {
+  color: #faae58;
+}
+.activity_wrap .couplet_content_wrap .couplet_line .couplet_text {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+.activity_wrap .active_action_wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #5c5c5c;
+  padding-top: 10rpx;
+  font-size: 28rpx;
+}
+.activity_wrap .active_action_wrap .iconfont {
+  color: #faae58;
+  font-size: 50rpx;
+}
+.activity_wrap .couplet_data_wrap {
+  display: flex;
+  justify-content: space-between;
+  justify-items: center;
+  padding-top: 28rpx;
+  color: #353535;
+}
+.activity_wrap .couplet_data_wrap .iconfont {
+  font-size: 32rpx;
+  padding: 0 10rpx;
+}
+.activity_wrap .couplet_data_wrap .iconfont text {
+  padding-left: 10rpx;
+}

@@ -1,0 +1,108 @@
+<!-- 标签栏（帖子、楹联、资料） -->
+<van-tabs active="{{ active }}" bind:change="onChange" animated swipeable color="#faae58">
+  <van-tab title="帖子">
+    <!-- 提示内容条数 -->
+    <view class="total_wrap">
+      共{{userPostBrowses}}条内容
+    </view>
+    <!-- 最近浏览帖子列表 -->
+    <view wx:if="{{postList.length === 0}}">
+      <van-empty description="空空如也~~~" />
+    </view>
+    <view wx:else>
+      <view class="collection_wrap"
+        wx:for="{{postList}}"
+        wx:key="postId">
+        <navigator url="/pages/post_about/post_detail/index?postId={{item.postId}}" hover-class="none">
+          <view class="title_wrap">{{item.postTitle}}</view>
+          <view class="author_wrap">{{item.postUserName}}</view>
+          <view class="line_wrap">
+            <view class="iconfont icon-tags"></view>
+            <view class="text_wrap">{{item.postFirstLine}}</view>
+          </view>
+          <view class="line_wrap">
+            <view class="iconfont icon-tags"></view>
+            <view class="text_wrap">{{item.postSecondLine}}</view>
+          </view>
+        </navigator>
+        <view class="collection_and_delete">
+          <view class="collection">浏览时间：{{item.postCollectionTime}}</view>
+          <view class="delete" bindtap="deletePost" data-postid="{{item.postId}}" data-index="{{index}}"><text class="iconfont icon-shanchu"></text>删除记录</view>
+        </view>
+      </view>    
+    </view>
+  </van-tab>
+
+  <van-tab title="楹联">
+    <!-- 提示内容条数 -->
+    <view class="total_wrap">
+      共{{userCoupletBrowses}}条内容
+    </view>
+    <!-- 最近浏览楹联列表 -->
+    <view wx:if="{{coupletList.length === 0}}">
+      <van-empty description="空空如也~~~" />
+    </view>
+    <view wx:else>
+      <view class="collection_wrap"
+        wx:for="{{coupletList}}"
+        wx:key="coupletId">
+        <navigator url="/pages/couplet_about/couplet_detail/index?coupletId={{item.coupletId}}" hover-class="none">
+          <view class="title_wrap">{{item.coupletTitle}}</view>
+          <view class="author_wrap">{{item.coupletAuthorName}}</view>
+          <view class="line_wrap">
+            <view class="iconfont icon-tags"></view>
+            <view class="text_wrap">{{item.coupletFirstLine}}</view>
+          </view>
+          <view class="line_wrap">
+            <view class="iconfont icon-tags"></view>
+            <view class="text_wrap">{{item.coupletSecondLine}}</view>
+          </view>      
+        </navigator>
+        <view class="collection_and_delete">
+          <view class="collection">浏览时间：{{item.coupletCollectionTime}}</view>
+          <view class="delete" bindtap="deleteCouplet" data-coupletid="{{item.coupletId}}" data-index="{{index}}"><text class="iconfont icon-shanchu"></text>删除记录</view>
+        </view>
+      </view>    
+    </view>
+  </van-tab>
+
+  <van-tab title="资料">
+    <!-- 提示内容条数 -->
+    <view class="total_wrap">
+      共{{userDocumentBrowses}}条内容
+    </view>
+    <!-- 最近浏览资料列表 -->
+    <view wx:if="{{documentList.length === 0}}">
+      <van-empty description="空空如也~~~" />
+    </view>
+    <view wx:else>
+      <view class="my_document"
+        wx:for="{{documentList}}"
+        wx:key="documentId">
+        <navigator url="/pages/study_about/document_detail/index?documentId={{item.documentId}}" hover-class="none"> 
+          <view class="document_picture">
+            <image mode="widthFix" src="{{item.documentPicture}}"></image>
+          </view>
+          <view class="name_and_introduction_and_browse">
+            <view class="name">{{item.documentName}}</view>
+            <view class="introduction">{{item.documentIntroduction}}</view>
+            <view class="browse">浏览时间：{{item.documentBrowseTime}}</view>
+          </view>    
+        </navigator>
+        <view class="collections_and_delete">
+          <view class="common">
+            <view class="iconfont icon-wodeshoucang"></view>
+            <view class="detail">评分:{{item.documentScore}}</view>
+          </view>
+          <view class="common" bindtap="deleteDocument" data-documentid="{{item.documentId}}" data-index="{{index}}">
+            <view class="iconfont icon-shanchu"></view>
+            <view class="detail">删除记录</view>
+          </view>
+        </view>
+      </view>    
+    </view>
+  </van-tab>
+</van-tabs>
+
+<van-dialog id="van-dialog" />
+<van-toast id="van-toast" />

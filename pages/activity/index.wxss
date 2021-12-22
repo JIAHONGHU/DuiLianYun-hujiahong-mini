@@ -1,0 +1,90 @@
+page {
+  background-color: #ebebeb;
+}
+.activity_wrap {
+  background-color: #ffffff;
+  padding: 0rpx 10rpx;
+  padding-top: 10rpx;
+  padding-bottom: 20rpx;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+}
+.activity_wrap .user_info_wrap {
+  display: flex;
+  align-items: center;
+  height: 100rpx;
+  border-bottom: 1rpx solid #fefefe;
+}
+.activity_wrap .user_info_wrap image {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+.activity_wrap .user_info_wrap .name_and_motto {
+  margin-left: 10rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.activity_wrap .user_info_wrap .name_and_motto .user_name {
+  font-size: 34rpx;
+  color: #faae58;
+  padding-bottom: 6rpx;
+}
+.activity_wrap .user_info_wrap .name_and_motto .user_motto {
+  color: #353535;
+  font-size: 26rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+.activity_wrap .user_info_wrap .active_time {
+  text-align: right;
+  color: #5c5c5c;
+  flex: 3;
+}
+.activity_wrap .couplet_content_wrap {
+  font-size: 32rpx;
+  border-bottom: 1rpx solid #fefefe;
+}
+.activity_wrap .couplet_content_wrap .couplet_title {
+  font-size: 34rpx;
+  text-align: center;
+  color: #353535;
+  padding: 10rpx 0;
+}
+.activity_wrap .couplet_content_wrap .couplet_type {
+  font-size: 28rpx;
+  text-align: center;
+  color: #353535;
+  padding: 10rpx 0;
+}
+.activity_wrap .couplet_content_wrap .couplet_line {
+  display: flex;
+  justify-content: center;
+  color: #353535;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+}
+.activity_wrap .couplet_content_wrap .couplet_line .icon-tags {
+  color: #faae58;
+}
+.activity_wrap .couplet_content_wrap .couplet_line .couplet_text {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+.activity_wrap .active_action_wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #5c5c5c;
+  padding-top: 10rpx;
+  font-size: 28rpx;
+}
+.activity_wrap .active_action_wrap .iconfont {
+  color: #faae58;
+  font-size: 50rpx;
+}

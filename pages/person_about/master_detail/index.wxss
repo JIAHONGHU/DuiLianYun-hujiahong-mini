@@ -1,0 +1,159 @@
+.person_detail .background_image {
+  height: 240rpx;
+  overflow: hidden;
+}
+.person_detail .background_image image {
+  width: 100%;
+}
+.person_detail .portrait_and_infos {
+  display: flex;
+  align-items: center;
+  margin-top: -20rpx;
+  padding: 0 10rpx;
+}
+.person_detail .portrait_and_infos .portrait image {
+  width: 180rpx;
+  height: 180rpx;
+  border: 6rpx solid #ffffff;
+  border-radius: 50%;
+  background-color: #ffffff;
+}
+.person_detail .portrait_and_infos .portrait_right {
+  padding-left: 10rpx;
+}
+.person_detail .portrait_and_infos .portrait_right .portrait_right_up {
+  display: flex;
+  align-items: flex-end;
+  padding-top: 10rpx;
+  padding-bottom: 2px;
+}
+.person_detail .portrait_and_infos .portrait_right .portrait_right_up .name {
+  color: #faae58;
+  font-size: 40rpx;
+  font-weight: bold;
+}
+.person_detail .portrait_and_infos .portrait_right .portrait_right_up .dynasty {
+  color: #353535;
+  padding-left: 20rpx;
+  font-size: 28rpx;
+}
+.person_detail .portrait_and_infos .portrait_right .portrait_right_down {
+  color: #353535;
+  font-size: 28rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+.person_detail .name_and_motto {
+  display: flex;
+  align-items: flex-end;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 1rpx solid #cccccc;
+}
+.person_detail .name_and_motto .name {
+  padding-left: 40rpx;
+  font-size: 44rpx;
+  color: #353535;
+  font-weight: bold;
+  color: #faae58;
+}
+.person_detail .name_and_motto .motto {
+  padding-left: 40rpx;
+  font-size: 30rpx;
+  color: #535353;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+.activity_wrap {
+  padding: 0rpx 20rpx;
+  padding-top: 10rpx;
+  padding-bottom: 20rpx;
+  margin-top: 10rpx;
+  margin-bottom: 30rpx;
+  border-bottom: 4rpx solid #e9e9e9;
+  border-top: 4rpx solid #e9e9e9;
+  background-color: #ffffff;
+}
+.activity_wrap .time_and_yunduo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.activity_wrap .time_and_yunduo .active_time {
+  display: flex;
+  justify-content: flex-start;
+}
+.activity_wrap .time_and_yunduo .icon-duilianyun {
+  display: flex;
+  color: #faae58;
+  justify-content: flex-end;
+}
+.activity_wrap .content_wrap {
+  font-size: 32rpx;
+}
+.activity_wrap .content_wrap .title {
+  font-size: 38rpx;
+  text-align: center;
+  color: #353535;
+  padding: 10rpx 0;
+}
+.activity_wrap .content_wrap .type {
+  font-size: 28rpx;
+  text-align: center;
+  color: #353535;
+  padding: 10rpx 0;
+}
+.activity_wrap .content_wrap .line {
+  display: flex;
+  justify-content: center;
+  padding: 10rpx 0;
+  color: #353535;
+}
+.activity_wrap .content_wrap .line .icon-tags {
+  color: #faae58;
+}
+.activity_wrap .content_wrap .line .text {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+.activity_wrap .active_action_wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #5c5c5c;
+  padding-top: 10rpx;
+  font-size: 28rpx;
+}
+.activity_wrap .active_action_wrap .iconfont {
+  color: #faae58;
+  font-size: 50rpx;
+}
+.activity_wrap .data_wrap {
+  display: flex;
+  justify-content: space-between;
+  justify-items: center;
+  padding-top: 28rpx;
+  color: #353535;
+}
+.activity_wrap .data_wrap .iconfont {
+  font-size: 32rpx;
+  padding: 0 10rpx;
+}
+.activity_wrap .data_wrap .iconfont text {
+  padding-left: 10rpx;
+}
+.total_wrap {
+  background-color: #ffffff;
+  padding: 10rpx 20rpx;
+  border-left: 10rpx solid #faae58;
+  font-size: 36rpx;
+  color: #353535;
+  margin: 10rpx 10rpx;
+  font-size: 30rpx;
+}

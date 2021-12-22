@@ -1,0 +1,43 @@
+<view class="top_page">
+  <!-- 会员卡卡面信息 -->
+  <view class="member_card">
+    <view class="emblem_box">
+      <image class="emblem" src="{{emblemSrc}}"></image>
+    </view>
+    <view class="title">
+    <view class="content">
+    湖南省楹联协会 
+    </view>
+    <view class="content">
+    会员卡
+    </view>
+    </view>
+    <view class="member_id">UID：{{memberInformation.memberUid}}</view>
+    
+  </view>
+
+  <view class="count_days">
+    <view style="margin-left:50rpx;">
+     今天是您成为会员的第：
+    </view>
+    <view class="days_display">
+      <view class="{{bitIcon[0]}}"></view>
+      <view class="{{bitIcon[1]}}"></view>
+      <view class="{{bitIcon[2]}}"></view>
+      <view class="{{bitIcon[3]}}"></view>
+      <view class="{{bitIcon[4]}}"></view>
+      <view>天</view>
+    </view>
+  </view>
+  <view class="main_info">
+  </view>
+</view>
+
+<!-- 会员基本信息 -->
+<van-divider contentPosition="center" customStyle="color: #1989fa; border-color: rgba(136, 136, 136, 0.514); font-size: 18px;">基本信息</van-divider>
+<view class="bottom_page">
+  <van-cell title="会员姓名" title-width="130rpx" icon="manager-o" size="large" value="{{memberInformation.memberName}}"/>
+  <van-cell title="会员UID" title-width="130rpx" icon="vip-card-o" size="large" value="{{memberInformation.memberUid}}"/>
+  <van-cell title="会员生日" title-width="130rpx" icon="gift-card-o" size="large" value="{{memberInformation.memberBirthday}}"/>
+  <van-cell title="会员电话号" title-width="160rpx" icon="phone-o" size="large" value="{{memberInformation.memberPhone}}"/>
+</view>

@@ -1,0 +1,48 @@
+<!-- 显示书架内容条数 -->
+<view class="title_wrap">
+  共{{userDocuments}}条内容
+</view>
+
+<!-- 资料列表 -->
+<view class="documents_wrap">
+	<view wx:if="{{documentList.length === 0}}">
+		<van-empty description="空空如也~~~" />
+	</view>
+  <view wx:else>
+    <view class="my_document"
+      wx:for="{{documentList}}"
+      wx:key="documentId">
+      <navigator url="/pages/study_about/document_detail/index?documentId={{item.documentId}}" hover-class="none">
+        <view class="document_picture">
+          <image mode="widthFix" src="{{item.documentPicture}}"></image>
+        </view>
+        <view class="name_and_introduction_and_score">
+          <view class="name">{{item.documentName}}</view>
+          <view class="introduction">{{item.documentIntroduction}}</view>
+          <view class="score">评分：{{item.documentScore}}</view>
+        </view>    
+      </navigator>
+      <view class="collections_and_delete">
+        <view class="common">
+          <view class="iconfont icon-wodeshoucang"></view>
+          <view class="detail">收藏{{item.documentCollections}}</view>
+        </view>
+        <view class="common" bindtap="deleteDocument" data-documentid="{{item.documentId}}" data-index="{{index}}">
+          <view class="iconfont icon-shanchu"></view>
+          <view class="detail">移除书架</view>
+        </view>
+      </view>
+    </view>  
+  </view>
+</view>
+
+<!-- 移出书架弹出页面 -->
+<van-action-sheet
+  show="{{ show }}"
+  actions="{{ actions }}"
+  description="确定将该作品移出书架吗"
+  cancel-text="取消操作"
+  bind:cancel="cancelAction"
+  bind:select="selectAction"
+/>
+<van-toast id="van-toast" />
